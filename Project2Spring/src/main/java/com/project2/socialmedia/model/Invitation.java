@@ -15,11 +15,38 @@ public class Invitation {
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "username")
-	List<User> userList;
+	List<User> senders;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "username")
-	List<User> reciberList;
+	List<User> receivers;
 	
+	public Invitation() {}
 
+	public Invitation(List<User> userList, List<User> receiverList)
+	{
+		super();
+		this.senders = userList;
+		this.receivers = receiverList;
+	}
+
+	public List<User> getUserList()
+	{
+		return senders;
+	}
+
+	public void setUserList(List<User> userList)
+	{
+		this.senders = userList;
+	}
+
+	public List<User> getReceiverList()
+	{
+		return receivers;
+	}
+
+	public void setReceiverList(List<User> receiverList)
+	{
+		this.receivers = receiverList;
+	}
 }

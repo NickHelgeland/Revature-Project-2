@@ -1,15 +1,19 @@
 package com.project2.socialmedia.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="user")
 public class User {
 	@Id
-	@Column(name="username", unique = true, nullable = false)
+	@Column(name="username")
 	private String userName;
 	
 	@Column(name = "password", nullable = false)
@@ -26,6 +30,15 @@ public class User {
 	
 	@Column(name = "address", nullable = false)
 	private String address;
+	
+	@OneToMany(mappedBy = "senders", fetch = FetchType.LAZY)
+	private List<Invitation> senderList;
+	
+	@OneToMany(mappedBy = "receivers", fetch = FetchType.LAZY)
+	private List<Invitation> receiverList;
+	
+	@OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+	private List<Post> postList;
 	
 	public User() {
 	}
@@ -86,6 +99,36 @@ public class User {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public List<Invitation> getSenderList()
+	{
+		return senderList;
+	}
+
+	public void setSenderList(List<Invitation> senderList)
+	{
+		this.senderList = senderList;
+	}
+
+	public List<Invitation> getReceiverList()
+	{
+		return receiverList;
+	}
+
+	public void setReceiverList(List<Invitation> receiverList)
+	{
+		this.receiverList = receiverList;
+	}
+
+	public List<Post> getPostList()
+	{
+		return postList;
+	}
+
+	public void setPostList(List<Post> postList)
+	{
+		this.postList = postList;
 	}
 
 	@Override
