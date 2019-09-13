@@ -3,20 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { PassRecoveryComponent } from './pass-recovery/pass-recovery.component';
+import { UpdateFormComponent } from './components/update-form/update-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
-@NgModule({ // put here our components
+@NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent,
-    SignInComponent,
-    PassRecoveryComponent    
+    UpdateFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
