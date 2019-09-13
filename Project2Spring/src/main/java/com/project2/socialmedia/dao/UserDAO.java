@@ -2,16 +2,15 @@ package com.project2.socialmedia.dao;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.project2.socialmedia.model.User;
 
 
-@Repository("users")
+@Repository("userRepo")
 @Transactional
 public class UserDAO implements Insert<User>, Update<User>, Select<User>
 {
@@ -37,7 +36,7 @@ public class UserDAO implements Insert<User>, Update<User>, Select<User>
 
 
 	public List<User> selectAll() {
-		return sf.getCurrentSession().createQuery("from user",User.class).list();
+		return sf.getCurrentSession().createQuery("from userSM",User.class).list();
 	}
 
 }

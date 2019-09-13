@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user")
+@Table(name="userSM")
 public class User {
 	@Id
 	@Column(name="username")
@@ -40,7 +40,14 @@ public class User {
 	@OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
 	private List<Post> postList;
 	
+	@OneToMany(mappedBy = "friend1", fetch = FetchType.LAZY)
+	private List<Friends> frind1List;
+	
+	@OneToMany(mappedBy = "friend2", fetch = FetchType.LAZY )
+	private List<Friends> friend2List;
+	
 	public User() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public User(String userName, String passWord, String firstName, String lastName, String email, String address) {
@@ -52,6 +59,26 @@ public class User {
 		this.email = email;
 		this.address = address;
 	}
+
+
+	public User(String userName, String passWord, String firstName, String lastName, String email, String address,
+			List<Invitation> senderList, List<Invitation> receiverList, List<Post> postList, List<Friends> frind1List,
+			List<Friends> friend2List) {
+		super();
+		this.userName = userName;
+		this.passWord = passWord;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.address = address;
+		this.senderList = senderList;
+		this.receiverList = receiverList;
+		this.postList = postList;
+		this.frind1List = frind1List;
+		this.friend2List = friend2List;
+	}
+
+
 
 	public String getUserName() {
 		return userName;
@@ -101,40 +128,53 @@ public class User {
 		this.address = address;
 	}
 
-	public List<Invitation> getSenderList()
-	{
+	public List<Invitation> getSenderList() {
 		return senderList;
 	}
 
-	public void setSenderList(List<Invitation> senderList)
-	{
+	public void setSenderList(List<Invitation> senderList) {
 		this.senderList = senderList;
 	}
 
-	public List<Invitation> getReceiverList()
-	{
+	public List<Invitation> getReceiverList() {
 		return receiverList;
 	}
 
-	public void setReceiverList(List<Invitation> receiverList)
-	{
+	public void setReceiverList(List<Invitation> receiverList) {
 		this.receiverList = receiverList;
 	}
 
-	public List<Post> getPostList()
-	{
+	public List<Post> getPostList() {
 		return postList;
 	}
 
-	public void setPostList(List<Post> postList)
-	{
+	public void setPostList(List<Post> postList) {
 		this.postList = postList;
+	}
+
+	public List<Friends> getFrind1List() {
+		return frind1List;
+	}
+
+	public void setFrind1List(List<Friends> frind1List) {
+		this.frind1List = frind1List;
+	}
+
+	public List<Friends> getFriend2List() {
+		return friend2List;
+	}
+
+	public void setFriend2List(List<Friends> friend2List) {
+		this.friend2List = friend2List;
 	}
 
 	@Override
 	public String toString() {
 		return "User [userName=" + userName + ", passWord=" + passWord + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + ", address=" + address + "]";
-	}	
+				+ lastName + ", email=" + email + ", address=" + address + ", senderList=" + senderList
+				+ ", receiverList=" + receiverList + ", postList=" + postList + ", frind1List=" + frind1List
+				+ ", friend2List=" + friend2List + "]";
+	}
 
+	
 }
