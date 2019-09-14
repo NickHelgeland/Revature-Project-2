@@ -22,37 +22,37 @@ public class Friends
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "friend1", referencedColumnName="username")
-	private User friend1;
+	private Users friend1;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "friend2", referencedColumnName="username")
-	private User friend2;
+	private Users friend2;
 	
 	public Friends() {}
 
-	public Friends(User friend1, User friend2)
+	public Friends(Users friend1, Users friend2)
 	{
 		super();
 		this.friend1 = friend1;
 		this.friend2 = friend2;
 	}
 
-	public User getFriend1()
+	public Users getFriend1()
 	{
 		return friend1;
 	}
 
-	public void setFriend1(User friend1)
+	public void setFriend1(Users friend1)
 	{
 		this.friend1 = friend1;
 	}
 
-	public User getFriend2()
+	public Users getFriend2()
 	{
 		return friend2;
 	}
 
-	public void setFriend2(User friend2)
+	public void setFriend2(Users friend2)
 	{
 		this.friend2 = friend2;
 	}

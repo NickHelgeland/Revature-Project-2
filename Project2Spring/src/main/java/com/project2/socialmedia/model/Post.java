@@ -25,9 +25,9 @@ public class Post
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "username")
-	private User owner;
+	private Users owner;
 
-	public Post(long postId, String content, User username)
+	public Post(long postId, String content, Users username)
 	{
 		super();
 		this.postId = postId;
@@ -57,12 +57,12 @@ public class Post
 		this.content = content;
 	}
 
-	public User getUsername()
+	public Users getUsername()
 	{
 		return owner;
 	}
 
-	public void setUsername(User username)
+	public void setUsername(Users username)
 	{
 		this.owner = username;
 	}
