@@ -3,6 +3,8 @@ package com.project2.socialmedia.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -15,13 +17,14 @@ public class Friends
 	
 	@Id
 	@Column(name="friends_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long friendsid;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "friend1", referencedColumnName="username")
 	private User friend1;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "friend2", referencedColumnName="username")
 	private User friend2;
 	

@@ -17,7 +17,10 @@
 	<tx:annotation-driven/> 
 	<mvc:annotation-driven/>
 	
-<!-- 	<bean name="userRepo" scope="singleton" class="dao.StatusDAOImpl" /> -->
+	<bean name="userRepo" scope="singleton" class="com.project2.socialmedia.dao.UserDAO" />
+	<bean name="friendsRepo" scope="singleton" class="com.project2.socialmedia.dao.FriendsDAO" />
+	<bean name="postRepo" scope="singleton" class="com.project2.socialmedia.dao.PostDAO" />
+	<bean name="invitationRepo" scope="singleton" class="com.project2.socialmedia.dao.InvitationDAO" />
 	
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">

@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.project2.socialmedia.model.Friends;
 
-@Repository("friends")
+@Repository("friendsRepo")
 @Transactional
 public class FriendsDAO implements Insert<Friends>, Update<Friends>,  Delete<Friends>, Select<Friends> {
 

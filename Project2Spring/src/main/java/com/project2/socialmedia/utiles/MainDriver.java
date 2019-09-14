@@ -1,5 +1,10 @@
 package com.project2.socialmedia.utiles;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.security.auth.login.Configuration;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -9,11 +14,20 @@ import com.project2.socialmedia.model.User;
 public class MainDriver {
 	public static ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 	//@Qualifier("userRepo")
+	//@Autowired
+	
 	public static UserDAO userDao = appContext.getBean("userRepo", UserDAO.class);
 
 	public static void main(String[] args) {
-		insertInitialValues();
-		System.out.println("All users " + userDao.selectAll());
+		//insertInitialValues();
+		
+		List<User> userList = new ArrayList<>();
+		
+		userList = userDao.selectAll();
+		
+		for (User u : userList) {
+			System.out.println("All users " + u);
+		}
 	}
 	
 public static void insertInitialValues() {

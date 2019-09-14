@@ -20,11 +20,11 @@ public class Invitation {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long invitationid;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional=false)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "sender", referencedColumnName="username")
 	private User senders;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional=false)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "receiver", referencedColumnName="username")
 	private User receivers;
 	

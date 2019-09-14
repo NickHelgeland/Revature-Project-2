@@ -18,16 +18,16 @@ public class Post
 	@Id
 	@Column(name="post_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int postId;
+	private Long postId;
 	
 	@Column(name = "content", nullable = false)
 	private String content;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional=false)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "username")
 	private User owner;
 
-	public Post(int postId, String content, User username)
+	public Post(long postId, String content, User username)
 	{
 		super();
 		this.postId = postId;
@@ -37,12 +37,12 @@ public class Post
 	
 	public Post() {}
 
-	public int getPostId()
+	public long getPostId()
 	{
 		return postId;
 	}
 
-	public void setPostId(int postId)
+	public void setPostId(long postId)
 	{
 		this.postId = postId;
 	}

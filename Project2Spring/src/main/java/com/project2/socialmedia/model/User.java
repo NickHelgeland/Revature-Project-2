@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="userSM")
+@Table(name="UserSM")
 public class User {
 	@Id
 	@Column(name="username")
@@ -31,23 +31,22 @@ public class User {
 	@Column(name = "address", nullable = false)
 	private String address;
 	
-	@OneToMany(mappedBy = "senders", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "senders")
 	private List<Invitation> senderList;
 	
-	@OneToMany(mappedBy = "receivers", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "receivers")
 	private List<Invitation> receiverList;
 	
-	@OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "owner")
 	private List<Post> postList;
 	
-	@OneToMany(mappedBy = "friend1", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "friend1")
 	private List<Friends> frind1List;
 	
-	@OneToMany(mappedBy = "friend2", fetch = FetchType.LAZY )
+	@OneToMany(mappedBy = "friend2")
 	private List<Friends> friend2List;
 	
 	public User() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public User(String userName, String passWord, String firstName, String lastName, String email, String address) {

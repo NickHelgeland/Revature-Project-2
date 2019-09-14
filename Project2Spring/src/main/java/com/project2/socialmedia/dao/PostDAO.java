@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.project2.socialmedia.model.Post;
 
-@Repository("post")
+@Repository("postRepo")
 @Transactional
 public class PostDAO implements Insert<Post>, Update<Post>,  Delete<Post>, Select<Post>{
 

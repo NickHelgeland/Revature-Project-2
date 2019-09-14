@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.project2.socialmedia.model.Invitation;
 
-@Repository("invitation")
+@Repository("invitationRepo")
 @Transactional
 public class InvitationDAO implements Insert<Invitation>, Update<Invitation>,  Delete<Invitation>, Select<Invitation>{
 

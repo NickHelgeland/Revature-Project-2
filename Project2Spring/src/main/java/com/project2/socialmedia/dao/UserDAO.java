@@ -12,9 +12,10 @@ import com.project2.socialmedia.model.User;
 
 @Repository("userRepo")
 @Transactional
-public class UserDAO implements Insert<User>, Update<User>, Select<User>
+public class UserDAO //implements Insert<User>, Update<User>, Select<User>
 {
 	
+		
 	@Autowired
 	private SessionFactory sf;
 	
@@ -24,19 +25,18 @@ public class UserDAO implements Insert<User>, Update<User>, Select<User>
 		
 	}
 
-
+	
 	public void update(User obj) {
 		sf.getCurrentSession().update(obj);		
 	}
 
-
-	public User selectOne(int id) {
+	
+	public User selectOne(String id) {
 		return sf.getCurrentSession().get(User.class,id);
 	}
 
-
 	public List<User> selectAll() {
-		return sf.getCurrentSession().createQuery("from userSM",User.class).list();
+		return sf.getCurrentSession().createQuery("from User",User.class).list();
 	}
 
 }
