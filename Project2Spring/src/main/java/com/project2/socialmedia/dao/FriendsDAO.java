@@ -2,6 +2,7 @@ package com.project2.socialmedia.dao;
 
 import java.util.List;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,12 +18,18 @@ public class FriendsDAO implements Insert<Friends>, Update<Friends>,  Delete<Fri
 	private SessionFactory sf;
 	
 	public Friends selectOne(int id) {
-		return sf.getCurrentSession().get(Friends.class,id);
+		Session session = sf.openSession();
+		Friends friend = session.get(Friends.class,id);
+		session.close();
+		return friend;
 	}
 
 	
 	public List<Friends> selectAll() {
-		return sf.getCurrentSession().createQuery("FROM friends",Friends.class).list();
+		Session session = sf.openSession();
+		List<Friends> list = session.createQuery("FROM friends",Friends.class).list();
+		session.close();
+		return list;
 	}
 
 	

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="UserSM")
-public class User {
+public class Users {
 	@Id
 	@Column(name="username")
 	private String userName;
@@ -46,10 +46,10 @@ public class User {
 	@OneToMany(mappedBy = "friend2")
 	private List<Friends> friend2List;
 	
-	public User() {
+	public Users() {
 	}
 
-	public User(String userName, String passWord, String firstName, String lastName, String email, String address) {
+	public Users(String userName, String passWord, String firstName, String lastName, String email, String address) {
 		super();
 		this.userName = userName;
 		this.passWord = passWord;
@@ -60,7 +60,7 @@ public class User {
 	}
 
 
-	public User(String userName, String passWord, String firstName, String lastName, String email, String address,
+	public Users(String userName, String passWord, String firstName, String lastName, String email, String address,
 			List<Invitation> senderList, List<Invitation> receiverList, List<Post> postList, List<Friends> frind1List,
 			List<Friends> friend2List) {
 		super();
