@@ -8,7 +8,6 @@ export class EncryptService {
 
   constructor() { }
 
-  //The set method is use for encrypt the value.
   set(keys, value){
     var key = CryptoJS.enc.Utf8.parse(keys);
     var iv = CryptoJS.enc.Utf8.parse(keys);
@@ -36,5 +35,4 @@ export class EncryptService {
 
     return decrypted.toString(CryptoJS.enc.Utf8);
   }
-
 }

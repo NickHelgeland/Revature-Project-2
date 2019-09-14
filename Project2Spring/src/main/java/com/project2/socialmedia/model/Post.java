@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="post")
 public class Post
 {
 	@Id
@@ -23,7 +23,7 @@ public class Post
 	@Column(name = "content", nullable = false)
 	private String content;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional=false)
 	@JoinColumn(name = "username")
 	private User owner;
 

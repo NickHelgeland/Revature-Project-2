@@ -1,10 +1,12 @@
 package com.project2.socialmedia.model;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -13,40 +15,48 @@ import javax.persistence.Table;
 @Table(name = "invitation")
 public class Invitation {
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "username")
-	List<User> senders;
+	@Id
+	@Column(name="invitation_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long invitationid;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "username")
-	List<User> receivers;
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional=false)
+	@JoinColumn(name = "sender", referencedColumnName="username")
+	private User senders;
 	
-	public Invitation() {}
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional=false)
+	@JoinColumn(name = "receiver", referencedColumnName="username")
+	private User receivers;
+	
+	public Invitation() {}	
+	
 
-	public Invitation(List<User> userList, List<User> receiverList)
-	{
+	public Invitation(User senders, User receivers) {
 		super();
-		this.senders = userList;
-		this.receivers = receiverList;
+		this.senders = senders;
+		this.receivers = receivers;
 	}
 
-	public List<User> getUserList()
-	{
+
+	public User getSenders() {
 		return senders;
 	}
 
-	public void setUserList(List<User> userList)
-	{
-		this.senders = userList;
+	public void setSenders(User senders) {
+		this.senders = senders;
 	}
 
-	public List<User> getReceiverList()
-	{
+	public User getReceivers() {
 		return receivers;
 	}
 
-	public void setReceiverList(List<User> receiverList)
-	{
-		this.receivers = receiverList;
+	public void setReceivers(User receivers) {
+		this.receivers = receivers;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Invitation [senders=" + senders + ", receivers=" + receivers + "]";
+	}	
 }

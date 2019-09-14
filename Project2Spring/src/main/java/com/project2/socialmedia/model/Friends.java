@@ -1,17 +1,28 @@
 package com.project2.socialmedia.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="friends")
 public class Friends
 {
-	@JoinColumn(name = "friend1")
+	
+	@Id
+	@Column(name="friends_id")
+	private Long friendsid;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "friend1", referencedColumnName="username")
 	private User friend1;
 	
-	@JoinColumn(name = "friend2")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "friend2", referencedColumnName="username")
 	private User friend2;
 	
 	public Friends() {}

@@ -1,10 +1,10 @@
 package com.project2.socialmedia.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface Select<T>
 {
 	T selectOne(int id);
 	
-	ArrayList<T> selectAll();
+	List<T> selectAll();
 }
