@@ -4,13 +4,14 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.project2.socialmedia.model.Invitation;
 
-@Repository("invitation")
+@Repository("invitationRepo")
 @Transactional
 public class InvitationDAO implements Insert<Invitation>, Update<Invitation>,  Delete<Invitation>, Select<Invitation>{
 
@@ -18,12 +19,18 @@ public class InvitationDAO implements Insert<Invitation>, Update<Invitation>,  D
 	private SessionFactory sf;
 	
 	public Invitation selectOne(int id) {
-		return sf.getCurrentSession().get(Invitation.class,id);
+		Session session = sf.openSession();
+		Invitation invitation = session.get(Invitation.class,id);
+		session.close();
+		return invitation;
 	}
 
 	
 	public List<Invitation> selectAll() {
-		return sf.getCurrentSession().createQuery("FROM invitation",Invitation.class).list();
+		Session session = sf.openSession();
+		List<Invitation> list = session.createQuery("FROM invitation",Invitation.class).list();
+		session.close();
+		return list;
 	}
 
 	

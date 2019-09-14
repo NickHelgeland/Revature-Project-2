@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventEmitter } from 'events';
+import { RoutingService } from '../routing.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,19 +9,13 @@ import { EventEmitter } from 'events';
 })
 export class SignInComponent implements OnInit {
 
-  submit = new EventEmitter();
-
-  constructor() {    
-  }  
+  constructor(private routingService: RoutingService) { } 
+  
+  login()
+  {
+      this.routingService.emitChange('user-field')
+  }
 
   ngOnInit() {
   }
-
-//   const self = this;
-//   dialog.componentInstance.submit.subscribe({
-//    next(value) {
-//       self.isOn = false;
-//    }
-// });
-
 }

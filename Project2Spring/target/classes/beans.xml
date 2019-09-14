@@ -10,38 +10,32 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
-	<context:annotation-config/>
-	<context:component-scan base-package="com.project2.socialmedia.dao"></context:component-scan>
-<!-- 	<context:component-scan base-package="com.project2.socialmedia.controller"></context:component-scan> -->
-	
-	<tx:annotation-driven proxy-target-class="true"
-        transaction-manager="transactionManager" /> 
-	<mvc:annotation-driven/>
-	
-	<bean name="userRepo" scope="singleton" class="com.project2.socialmedia.dao.UserDAO" />
-	<bean name="friendsRepo" scope="singleton" class="com.project2.socialmedia.dao.FriendsDAO" />
-	<bean name="postRepo" scope="singleton" class="com.project2.socialmedia.dao.PostDAO" />
-	<bean name="invitationRepo" scope="singleton" class="com.project2.socialmedia.dao.InvitationDAO" />
-	
+	<context:annotation-config/>	
+	<tx:annotation-driven/> 
+		
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url"
-			value="jdbc:oracle:thin:@revaturedb.cs48qmknn4om.us-east-2.rds.amazonaws.com:1521:ORCL" />
-		<property name="username" value="thedude" />
-		<property name="password" value="theguesswho123" />
+			value="jdbc:oracle:thin:@db0715java.cp1kj88vnunv.us-east-2.rds.amazonaws.com:1521:orcl" />
+		<property name="username" value="frer1972" />
+		<property name="password" value="tino1972" />
 	</bean>
 	
 	<!-- SESSIONFACTORY -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.project2.socialmedia.model" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.project2.socialmedia.model</value>
+			</list>
+		</property>
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
-				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
@@ -52,5 +46,15 @@
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+	<!-- <bean id="mapper" class="org.hibernate.mapping">
+		<property name="mapperInterface" value="com.project2.socialmedia.model.User"></property>
+		<property name="transaction" ref="transactionManager"></property>
+	</bean> -->
+	
+	<bean name="userRepo" scope="singleton" class="com.project2.socialmedia.dao.UserDAO" />		
+	<bean name="friendsRepo" scope="singleton" class="com.project2.socialmedia.dao.FriendsDAO" />
+	<bean name="postRepo" scope="singleton" class="com.project2.socialmedia.dao.PostDAO" />
+	<bean name="invitationRepo" scope="singleton" class="com.project2.socialmedia.dao.InvitationDAO" />
 
 </beans>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RoutingService } from './routing.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'SocialMediaApp';    
+
+  isOn: Boolean = true
+
+  constructor(private routingService: RoutingService, private router: Router) 
+  {  
+      routingService.changeEmitted$.subscribe(
+        text => {
+            this.isOn = false
+            this.router.navigate([text])
+        }
+      )
+  }
+
+  title = 'SocialMediaApp';  
 }

@@ -10,8 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="userSM")
-public class User {
+@Table(name="UserSM")
+public class Users {
 	@Id
 	@Column(name="username")
 	private String userName;
@@ -31,26 +31,25 @@ public class User {
 	@Column(name = "address", nullable = false)
 	private String address;
 	
-	@OneToMany(mappedBy = "senders", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "senders")
 	private List<Invitation> senderList;
 	
-	@OneToMany(mappedBy = "receivers", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "receivers")
 	private List<Invitation> receiverList;
 	
-	@OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "owner")
 	private List<Post> postList;
 	
-	@OneToMany(mappedBy = "friend1", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "friend1")
 	private List<Friends> frind1List;
 	
-	@OneToMany(mappedBy = "friend2", fetch = FetchType.LAZY )
+	@OneToMany(mappedBy = "friend2")
 	private List<Friends> friend2List;
 	
-	public User() {
-		// TODO Auto-generated constructor stub
+	public Users() {
 	}
 
-	public User(String userName, String passWord, String firstName, String lastName, String email, String address) {
+	public Users(String userName, String passWord, String firstName, String lastName, String email, String address) {
 		super();
 		this.userName = userName;
 		this.passWord = passWord;
@@ -61,7 +60,7 @@ public class User {
 	}
 
 
-	public User(String userName, String passWord, String firstName, String lastName, String email, String address,
+	public Users(String userName, String passWord, String firstName, String lastName, String email, String address,
 			List<Invitation> senderList, List<Invitation> receiverList, List<Post> postList, List<Friends> frind1List,
 			List<Friends> friend2List) {
 		super();
