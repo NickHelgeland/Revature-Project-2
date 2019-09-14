@@ -12,7 +12,7 @@ import com.project2.socialmedia.dao.UserDAO;
 import com.project2.socialmedia.model.User;
 
 public class MainDriver {
-	public static ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+	public static ApplicationContext appContext = new ClassPathXmlApplicationContext("beans.xml");
 	//@Qualifier("userRepo")
 	//@Autowired
 	
@@ -28,6 +28,8 @@ public class MainDriver {
 		for (User u : userList) {
 			System.out.println("All users " + u);
 		}
+		
+		System.out.println(userList);
 	}
 	
 public static void insertInitialValues() {

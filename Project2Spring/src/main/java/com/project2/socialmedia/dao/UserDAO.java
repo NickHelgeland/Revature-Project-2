@@ -36,7 +36,7 @@ public class UserDAO //implements Insert<User>, Update<User>, Select<User>
 	}
 
 	public List<User> selectAll() {
-		return sf.getCurrentSession().createQuery("from User",User.class).list();
+		return sf.openSession().createQuery("from User",User.class).list();
 	}
 
 }
