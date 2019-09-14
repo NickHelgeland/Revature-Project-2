@@ -9,8 +9,11 @@ export class SignUpComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    document.body.classList.add('sign-in');
+  ngOnInit() {    
+  }
+
+  hideBlock() {
+    let main_page = document.querySelector('.main-page');    
   }
 
 }

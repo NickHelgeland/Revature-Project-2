@@ -1,9 +1,8 @@
 /* ================= sign-in ================ */
 
 body {
-    background-image: url('../../wp-content/social-media.png');
-    width: 100%;
-    filter: blur(2px);
+    background-image: url('../../assets/social-media.png');
+    max-width: auto;
 }
 
 .main {
@@ -20,12 +19,12 @@ body {
 }
 
 a:hover {
-    background-color: #1292a8;
+    background-color: #119987;
     border-radius: 5px;
 }
 
 #swap:hover {
-    background-color: #1292a8;
+    background-color: #119987;
     border-radius: 5px;
 }
 
@@ -358,4 +357,540 @@ a:hover {
     color: #000000;
     font-size: 18px;
     font-weight: 500;
+}
+
+
+/* ================= User Field ================ */
+
+
+/* ================= nav bar ================ */
+
+header {
+    font-size: 18px;
+    vertical-align: baseline;
+    float: left;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #119987;
+}
+
+.search-bar {
+    float: left;
+    display: block;
+    width: 320px;
+    margin-top: 12px;
+    padding: 10px 40px 10px 10px;
+}
+
+.search-bar form {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.search-bar form input {
+    width: 100%;
+    background-color: #fff;
+    height: 50px;
+    color: #b2b2b2;
+    font-size: 18px;
+    border: 0;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.search-bar form button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #efefef;
+    width: 38px;
+    height: 100%;
+    border: 0;
+}
+
+.search-bar form button i {
+    color: #119987;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+nav {
+    float: left;
+    text-align: right;
+    padding-right: 2.5rem;
+}
+
+nav li {
+    display: inline-block;
+    text-align: center;
+    padding: 22px 28px;
+    position: relative;
+}
+
+nav ul ul {
+    position: absolute;
+    top: 100%;
+    width: 200px;
+    background-color: #119987;
+    text-align: left;
+}
+
+nav ul li span {
+    display: block;
+    height: 30px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav img {
+    width: 22px;
+}
+
+.notification-box.msg p {
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+.notification-box.msg .nott-list .notification-info span {
+    bottom: auto;
+    top: 5px;
+}
+
+.notification-box.msg .notification-info h3 {
+    margin-bottom: 1px;
+}
+
+.notification-box.msg .nott-list .notfication-details {
+    padding: 17px 20px 17px 20px;
+}
+
+.notification-box {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+    display: none;
+}
+
+.notification-box.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999999999;
+}
+
+.view-all-nots {
+    float: left;
+    width: 100%;
+}
+
+.view-all-nots>a {
+    float: left;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+    text-align: center;
+    background-color: #119987;
+    padding: 18px 0;
+}
+
+.acc-leftbar .nav-tabs>a {
+    float: left;
+    width: 100%;
+    background: none;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    border-left: 0;
+    border-right: 0;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    border-top: 0;
+}
+
+.nav-tabs {
+    border-bottom: 0;
+}
+
+.acc-leftbar .nav-tabs>a:last-child {
+    border-bottom: 0;
+}
+
+.acc-leftbar .nav-tabs>a i {
+    padding-right: 15px;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    font-weight: 700;
+    width: 40px;
+}
+
+.user-account {
+    float: right;
+    width: 110px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.user-info {
+    float: right;
+    width: 110px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.user-info a {
+    color: #fff;
+    font-size: 2rem;
+    float: left;
+    padding-top: 32px;
+    cursor: pointer;
+}
+
+.user-info a:hover {
+    color: #fff;
+}
+
+.user-info>i {
+    position: absolute;
+    top: 51%;
+    right: 10px;
+    color: #fff;
+    font-size: 12px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.user-account-settingss {
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+    display: none;
+    top: 100%;
+    right: 0;
+    width: 240px;
+    background-color: #fff;
+    border-left: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -ms-border-radius: 0 0 5px 5px;
+    -o-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    -webkit-box-shadow: 1px 1px 6px -2px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 1px 1px 6px -2px rgba(0, 0, 0, 0.24);
+    -ms-box-shadow: 1px 1px 6px -2px rgba(0, 0, 0, 0.24);
+    -o-box-shadow: 1px 1px 6px -2px rgba(0, 0, 0, 0.24);
+    box-shadow: 1px 1px 6px -2px rgba(0, 0, 0, 0.24);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.user-account-settingss.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+}
+
+.user-account-settingss>h3 {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 20px;
+}
+
+.on-off-status {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.on-off-status li {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.on-off-status li:last-child {
+    margin-bottom: 0;
+}
+
+.on-off-status li .fgt-sec small {
+    color: #686868;
+}
+
+.nt-title {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 10px 20px;
+}
+
+.nt-title h4 {
+    float: left;
+    color: #686868;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.nt-title>a {
+    float: right;
+    color: #686868;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.notification-box.msg .nott-list .notification-info span {
+    bottom: auto;
+    top: 5px;
+}
+
+.notification-box.msg .nott-list .notfication-details {
+    padding: 17px 20px 17px 20px;
+}
+
+.nott-list {
+    float: left;
+    width: 100%;
+}
+
+.nott-list .notification-info {
+    width: 86%;
+    float: left;
+    text-align: left;
+    position: relative;
+}
+
+.nott-list .notfication-details {
+    padding: 20px 20px 12px 20px;
+}
+
+.nott-list .notification-info h3 {
+    line-height: 20px;
+}
+
+.nott-list .notification-info span {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+
+
+/* =========== search_form =========== */
+
+.search_form {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.search_form form {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.search_form form input {
+    width: 100%;
+    height: 35px;
+    padding: 0 15px;
+    border: 1px solid #e5e5e5;
+    background-color: #f2f2f2;
+}
+
+.search_form form button {
+    color: #f2f2f2;
+    font-size: 14px;
+    background-color: #119987;
+    padding: 0 10px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    font-weight: 600;
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    -ms-border-radius: 0 3px 3px 0;
+    -o-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+
+/* =========== user-profile =========== */
+
+.main-left-sidebar {
+    float: left;
+    width: 100%;
+    margin-top: -20px;
+}
+
+.user-data {
+    text-align: center;
+}
+
+.user-profile {
+    float: left;
+    width: 100%;
+}
+
+.username-dt {
+    float: left;
+    width: 100%;
+    background-color: #119987;
+    padding-top: 40px;
+}
+
+.usr-pic {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    margin-bottom: -48px;
+}
+
+.usr-pic>img {
+    float: none;
+    border: 5px solid #fff;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    border-radius: 100px;
+    width: 100%;
+}
+
+.user-specs {
+    float: left;
+    width: 100%;
+    padding: 63px 0 27px 0;
+}
+
+.user-specs h3 {
+    color: #000000;
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.user-specs span {
+    color: #686868;
+    font-size: 14px;
+}
+
+.user-fw-status {
+    float: left;
+    width: 100%;
+}
+
+.user-fw-status li {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    padding: 15px 0;
+}
+
+.user-fw-status li:last-child {
+    border-bottom: 0;
+}
+
+.user-fw-status li:nth-child(1),
+.user-fw-status li:nth-child(2) {
+    border-bottom: 0;
+}
+
+.user-fw-status li h4 {
+    color: #686868;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.user-fw-status span {
+    color: #000000;
+    font-size: 20px;
+}
+
+.user-fw-status li a {
+    color: #119987;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.us-links {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 20px;
+}
+
+.us-links li {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.us-links li:last-child {
+    margin-bottom: 0;
+}
+
+.us-links li a {
+    float: left;
+    width: 100%;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tc {
+    text-align: center;
+}
+
+.tc a {
+    color: #000;
+}
+
+
+/* ============ Menu Btn =============*/
+
+.menu-btn {
+    float: right;
+    display: none;
+}
+
+.menu-btn a {
+    font-size: 24px;
+    color: #fff;
+    display: inline-block;
+    padding-top: 16px;
+    padding-left: 20px;
 }
