@@ -1,9 +1,12 @@
 package com.project2.socialmedia.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project2.socialmedia.dao.UserDAO;
@@ -16,9 +19,9 @@ public class UserInformationController {
 	UserDAO userDao;
 	
 	@CrossOrigin(origins="http://localhost:4200")
-	@PostMapping("/updateUser")
-	public void  updateUser(@RequestBody Users user) {
-		userDao.update(user);
+	@GetMapping("/getUsers")
+	public @ResponseBody List<Users>  getAllUser() {
+		return userDao.selectAll();
 	}
 
 }
