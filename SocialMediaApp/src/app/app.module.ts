@@ -14,6 +14,7 @@ import { UpdateFormComponent } from './components/update-form/update-form.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchFriendComponent } from './search-friend/search-friend.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     UserProfileComponent,
     UserMenuComponent,    
-    UpdateFormComponent
+    UpdateFormComponent, SearchFriendComponent
   ],
   imports: [
     BrowserModule,

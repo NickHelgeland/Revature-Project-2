@@ -2,9 +2,6 @@ package com.project2.socialmedia.utiles;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.security.auth.login.Configuration;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,7 +16,7 @@ public class MainDriver {
 	public static UserDAO userDao = appContext.getBean("userRepo", UserDAO.class);
 
 	public static void main(String[] args) {
-		//insertInitialValues();
+//		insertInitialValues();
 		
 		List<Users> userList = new ArrayList<>();
 		

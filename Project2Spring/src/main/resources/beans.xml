@@ -11,7 +11,11 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<context:annotation-config/>	
-	<tx:annotation-driven/> 
+	<context:component-scan base-package="com.project2.socialmedia.dao"></context:component-scan>
+	<context:component-scan base-package="com.project2.socialmedia.controller"></context:component-scan>
+	<tx:annotation-driven proxy-target-class="true"
+        transaction-manager="transactionManager" /> 
+	<mvc:annotation-driven/>
 		
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -46,11 +50,6 @@
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
-	<!-- <bean id="mapper" class="org.hibernate.mapping">
-		<property name="mapperInterface" value="com.project2.socialmedia.model.User"></property>
-		<property name="transaction" ref="transactionManager"></property>
-	</bean> -->
 	
 	<bean name="userRepo" scope="singleton" class="com.project2.socialmedia.dao.UserDAO" />		
 	<bean name="friendsRepo" scope="singleton" class="com.project2.socialmedia.dao.FriendsDAO" />

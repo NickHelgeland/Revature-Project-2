@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project2.socialmedia.dao.UserDAO;
-import com.project2.socialmedia.model.User;
+import com.project2.socialmedia.model.Users;
 
 @RestController
 public class UserInformationController {
@@ -17,7 +17,7 @@ public class UserInformationController {
 	
 	@CrossOrigin(origins="http://localhost:4200")
 	@PostMapping("/updateUser")
-	public void  updateUser(@RequestBody User user) {
+	public void  updateUser(@RequestBody Users user) {
 		userDao.update(user);
 	}
 
