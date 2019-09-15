@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project2.socialmedia.dao.UserDAO;
-import com.project2.socialmedia.model.Credentials;
 import com.project2.socialmedia.model.Users;
+import com.project2.socialmedia.response.Credentials;
+import com.project2.socialmedia.response.Result;
 
 @RestController
 public class LoginController
@@ -17,15 +18,15 @@ public class LoginController
 	@Autowired
 	private UserDAO userRepo;
 	
-	@PostMapping(value="/login")
 	@CrossOrigin
-	public @ResponseBody String login(@RequestBody Credentials credentials)
+	@PostMapping(value="/login")
+	public @ResponseBody Result login(@RequestBody Credentials credentials)
 	{
-		String result = "failed";
+		Result result = new Result("failed");
 		
 		if(this.checkCredentials(credentials.getUsername(), credentials.getPassword()))
 		{
-			result = "success";
+			result.setResult("success");;
 		}
 		
 		return result;
