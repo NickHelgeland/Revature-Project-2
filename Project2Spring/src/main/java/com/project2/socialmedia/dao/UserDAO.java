@@ -32,9 +32,9 @@ public class UserDAO implements Insert<Users>, Update<Users>
 	}
 
 	
-	public Users selectOne(String id) {
+	public Users selectOne(String username) {
 		Session session = sf.openSession();
-		Users user = session.get(Users.class,id);
+		Users user = session.get(Users.class,username);
 		session.close();
 		return user;
 	}

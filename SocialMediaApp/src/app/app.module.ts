@@ -26,7 +26,6 @@ import { SearchFriendComponent } from './search-friend/search-friend.component';
     HomeComponent,
     UserProfileComponent,
     UserMenuComponent,    
-    UpdateFormComponent, SearchFriendComponent
   ],
   imports: [
     BrowserModule,

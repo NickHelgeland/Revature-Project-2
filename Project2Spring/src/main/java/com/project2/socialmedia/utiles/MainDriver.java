@@ -18,15 +18,13 @@ public class MainDriver {
 	public static void main(String[] args) {
 //		insertInitialValues();
 		
-		List<Users> userList = new ArrayList<>();
-		
-		userList = userDao.selectAll();
-		
-		for (Users u : userList) {
-			System.out.println("All users " + u);
-		}
-		
-		System.out.println(userList);
+//		List<Users> userList = new ArrayList<>();
+//		
+//		userList = userDao.selectAll();
+//		
+//		for (Users u : userList) {
+//			System.out.println("All users " + u);
+//		}
 	}
 	
 	public static void insertInitialValues() {
