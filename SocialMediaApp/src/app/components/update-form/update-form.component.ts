@@ -10,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
   export class UpdateFormComponent {
   myresponse: any;
 
-  APP_URL = 'http://localhost:9005/AngularSpringMVC';
+  APP_URL = 'http://localhost:9005/Project2Spring/api';
 
   // public sm = {
     //data from database can either be set here in the empty quotes
@@ -26,7 +26,7 @@ import {HttpClient} from '@angular/common/http';
   constructor(private _http: HttpClient) {}
 
   getAllEmployees() {
-    this._http.get(this.APP_URL + '/getemployees').subscribe(
+    this._http.get(this.APP_URL + '/getUsers').subscribe(
       data => {
         this.myresponse = data;
       },

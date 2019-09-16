@@ -1,5 +1,4 @@
-
-<app-home></app-home>
-<app-update-form></app-update-form>
+<app-home *ngIf="isOn"></app-home>
+<!-- <app-update-form></app-update-form> -->
 <!-- <app-user-field *ngIf="!isOn"></app-user-field> -->
 <router-outlet></router-outlet>

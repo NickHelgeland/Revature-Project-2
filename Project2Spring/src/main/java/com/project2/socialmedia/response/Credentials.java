@@ -1,4 +1,4 @@
-package com.project2.socialmedia.model;
+package com.project2.socialmedia.response;
 
 public class Credentials
 {

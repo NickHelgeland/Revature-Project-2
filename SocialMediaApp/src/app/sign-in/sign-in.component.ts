@@ -19,9 +19,9 @@ export class SignInComponent implements OnInit {
   
   login()
   {
-    this.http.post("localhost:9009/Project2Spring/api/login", this.credentials).subscribe(
+    this.http.post("http://localhost:9009/Project2Spring/api/login", this.credentials).subscribe(
       data => {
-        if (data == "success")
+        if (data.result == "success")
         {
           this.routingService.emitChange('user-field')
         }

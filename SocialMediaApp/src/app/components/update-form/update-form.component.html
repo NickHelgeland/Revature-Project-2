@@ -63,13 +63,13 @@
           <th>Company Logo</th>
         </thead>
         <tbody>
-          <tr *ngFor="let employee of myresponse">
-            <td>{{employee.id}}</td>
-            <td>{{employee.name}}</td>
+          <tr *ngFor="let Users of myresponse">
+            <td>{{Users.userName}}</td>
+            <!-- <td>{{employee.name}}</td>
             <td>{{employee.mobile}}</td>
             <td>{{employee.address}}</td>
             <td><img src= "{{employee.companyLogo}}" alt="Company logo" class="img-thumbnail mx-auto d-block"
-                style="width: 30%" /></td>
+                style="width: 30%" /></td> -->
           </tr>
         </tbody>
       </table>
