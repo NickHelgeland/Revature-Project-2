@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -21,12 +22,12 @@ public class Invitation {
 	private Long invitationid;
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "sender", referencedColumnName="username")
+	@JoinColumn(name = "senders", referencedColumnName="username")
 	private Users senders;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "receiver", referencedColumnName="username")
-	private Users receivers;
+	private Users receiver;
 	
 	public Invitation() {}	
 	
@@ -34,7 +35,7 @@ public class Invitation {
 	public Invitation(Users senders, Users receivers) {
 		super();
 		this.senders = senders;
-		this.receivers = receivers;
+		this.receiver = receivers;
 	}
 
 
@@ -47,16 +48,16 @@ public class Invitation {
 	}
 
 	public Users getReceivers() {
-		return receivers;
+		return receiver;
 	}
 
 	public void setReceivers(Users receivers) {
-		this.receivers = receivers;
+		this.receiver = receivers;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Invitation [senders=" + senders + ", receivers=" + receivers + "]";
+		return "Invitation [senders=" + senders + ", receiver=" + receiver + "]";
 	}	
 }

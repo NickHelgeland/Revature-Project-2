@@ -20,7 +20,7 @@ public class UserInformationController {
 	
 	@CrossOrigin(origins="http://localhost:4200")
 	@GetMapping("/getUsers")
-	public @ResponseBody List<Users>  getAllUser() {
+	public /*@ResponseBody*/ List<Users>  getAllUser() {
 		return userDao.selectAll();
 	}
 

@@ -1,5 +1,6 @@
 package com.project2.socialmedia.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.OneToOne;
 
 @Entity
 @Table(name="friends")
@@ -20,41 +22,31 @@ public class Friends
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long friendsid;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "friend1", referencedColumnName="username")
-	private Users friend1;
+	@OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name = "person", referencedColumnName="username")
+	private Users person;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "friend2", referencedColumnName="username")
-	private Users friend2;
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "friend", referencedColumnName="username")
+	private Users friend;
 	
 	public Friends() {}
 
 	public Friends(Users friend1, Users friend2)
 	{
 		super();
-		this.friend1 = friend1;
-		this.friend2 = friend2;
-	}
-
-	public Users getFriend1()
-	{
-		return friend1;
-	}
-
-	public void setFriend1(Users friend1)
-	{
-		this.friend1 = friend1;
+		this.person = friend1;
+		this.friend = friend2;
 	}
 
 	public Users getFriend2()
 	{
-		return friend2;
+		return friend;
 	}
 
 	public void setFriend2(Users friend2)
 	{
-		this.friend2 = friend2;
+		this.friend = friend2;
 	}
 	
 	
