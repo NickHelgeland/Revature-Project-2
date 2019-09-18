@@ -12,6 +12,7 @@ export class SearchFriendComponent implements OnInit {
   userSF:string='';
 
   myresponse: any;
+  myresp: any;
 
   APP_URL = 'http://localhost:9009/Project2Spring/api/';
 
@@ -20,6 +21,7 @@ export class SearchFriendComponent implements OnInit {
     this._http.get(this.APP_URL + 'getUsers').subscribe(
       data => {
         this.myresponse = data;
+        this.myresp = this.myresponse;
       },
       error => {
         console.log('Error occured', error);
@@ -29,12 +31,19 @@ export class SearchFriendComponent implements OnInit {
    }
 
   ngOnInit() {
+   
   }
 
   Search(){
-    this.myresponse = this.myresponse.filter(res => {
-      return res.firstName.toLocaleLowerCase().natch(this.userSF.toLocaleLowerCase)
-    })
+    if(this.userSF != ''){
+      this.myresponse = this.myresponse.filter(res => {
+        return res.firstName.toLocaleLowerCase .match(this.userSF.toLocaleLowerCase)
+      })
+    }else if(this.userSF == null){
+      this.myresponse = this.myresp;
+    }
+
+   
   }
 
 }
