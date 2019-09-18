@@ -1,5 +1,7 @@
 package com.project2.socialmedia.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,13 +22,14 @@ public class LoginController
 	
 	@CrossOrigin
 	@PostMapping(value="/login")
-	public @ResponseBody Result login(@RequestBody Credentials credentials)
+	public @ResponseBody Result login(@RequestBody Credentials credentials, HttpSession httpSession)
 	{
 		Result result = new Result("failed");
 		
 		if(this.checkCredentials(credentials.getUsername(), credentials.getPassword()))
 		{
-			result.setResult("success");;
+			result.setResult("success");
+			this.initializeSession(credentials.getUsername(), httpSession);
 		}
 		
 		return result;
@@ -46,5 +49,10 @@ public class LoginController
         }
 
         return success;
+	}
+	
+	private void initializeSession(String username, HttpSession session)
+	{
+		session.setAttribute("username", username);
 	}
 }
