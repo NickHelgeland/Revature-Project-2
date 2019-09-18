@@ -56,15 +56,17 @@
     <div *ngIf="myresponse">
       <table class="table table-bordered table-hover">
         <thead>
-          <th>Employee Id</th>
-          <th>Name</th>
-          <th>Phone no.</th>
-          <th>Address</th>
-          <th>Company Logo</th>
+          <th>Movie Id</th>
+          <th>Movie Title</th>
+          <th>Rating</th>
+          <th>Show Times</th>
         </thead>
         <tbody>
-          <tr *ngFor="let Users of myresponse">
-            <td>{{Users.userName}}</td>
+          <tr *ngFor="let Movie of myresponse">
+            <td>{{Movie.movieId}}</td>
+            <td>{{Movie.movieName}}</td>
+            <td>{{Movie.movieRating}}</td>
+            <td>{{Movie.showTimes}}</td>
             <!-- <td>{{employee.name}}</td>
             <td>{{employee.mobile}}</td>
             <td>{{employee.address}}</td>
