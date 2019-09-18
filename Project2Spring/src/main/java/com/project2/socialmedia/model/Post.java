@@ -57,16 +57,6 @@ public class Post
 		this.content = content;
 	}
 
-	public Users getUsername()
-	{
-		return owner;
-	}
-
-	public void setUsername(Users username)
-	{
-		this.owner = username;
-	}
-
 	@Override
 	public String toString()
 	{
