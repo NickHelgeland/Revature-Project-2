@@ -14,7 +14,7 @@ export class SearchFriendComponent implements OnInit {
   myresponse: any;
   myresp: any;
 
-  APP_URL = 'http://localhost:9009/Project2Spring/api/';
+  APP_URL = 'http://localhost:9005/Project2Spring/api/';
 
   constructor(private _http: HttpClient) {
 
