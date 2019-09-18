@@ -22,11 +22,11 @@ public class Invitation {
 	private Long invitationid;
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "senders", referencedColumnName="userName")
+	@JoinColumn(name = "senders", referencedColumnName="username")
 	private Users senders;
 	
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "receiver", referencedColumnName="userName")
+	@JoinColumn(name = "receiver", referencedColumnName="username")
 	private Users receiver;
 	
 	public Invitation() {}	

@@ -23,11 +23,11 @@ public class Friends
 	private Long friendsid;
 	
 	@OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinColumn(name = "person", referencedColumnName="userName")
+	@JoinColumn(name = "person", referencedColumnName="username")
 	private Users person;
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "friend", referencedColumnName="userName")
+	@JoinColumn(name = "friend", referencedColumnName="username")
 	private Users friend;
 	
 	public Friends() {}

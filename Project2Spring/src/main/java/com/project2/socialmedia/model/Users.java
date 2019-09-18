@@ -13,16 +13,16 @@ import javax.persistence.Table;
 public class Users {
 	@Id
 	@Column(name="username")
-	private String userName;
+	private String username;
 	
 	@Column(name = "password", nullable = false)
-	private String passWord;
+	private String password;
 	
 	@Column(name = "firstname", nullable = false)
-	private String firstName;
+	private String firstname;
 	
 	@Column(name = "lastname", nullable = false)
-	private String lastName;
+	private String lastname;
 	
 	@Column(name = "email", nullable = false)
 	private String email;
@@ -44,10 +44,10 @@ public class Users {
 
 	public Users(String userName, String passWord, String firstName, String lastName, String email, String address) {
 		super();
-		this.userName = userName;
-		this.passWord = passWord;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.username = userName;
+		this.password = passWord;
+		this.firstname = firstName;
+		this.lastname = lastName;
 		this.email = email;
 		this.address = address;
 	}
@@ -57,10 +57,10 @@ public class Users {
 			List<Invitation> senderList, List<Invitation> receiverList, List<Post> postList, List<Friends> frind1List,
 			List<Friends> friend2List) {
 		super();
-		this.userName = userName;
-		this.passWord = passWord;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.username = userName;
+		this.password = passWord;
+		this.firstname = firstName;
+		this.lastname = lastName;
 		this.email = email;
 		this.address = address;
 		this.postList = postList;
@@ -70,35 +70,35 @@ public class Users {
 
 
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 
 	public String getPassWord() {
-		return passWord;
+		return password;
 	}
 
 	public void setPassWord(String passWord) {
-		this.passWord = passWord;
+		this.password = passWord;
 	}
 
 	public String getFirstName() {
-		return firstName;
+		return firstname;
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstname = firstName;
 	}
 
 	public String getLastName() {
-		return lastName;
+		return lastname;
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastname = lastName;
 	}
 
 	public String getEmail() {
@@ -143,8 +143,8 @@ public class Users {
 
 	@Override
 	public String toString() {
-		return "User [userName=" + userName + ", passWord=" + passWord + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + ", address=" + address + ", postList=" + postList + ", friendList=" + friendList + "]";
+		return "User [userName=" + username + ", passWord=" + password + ", firstName=" + firstname + ", lastName="
+				+ lastname + ", email=" + email + ", address=" + address + ", postList=" + postList + ", friendList=" + friendList + "]";
 	}
 
 	
