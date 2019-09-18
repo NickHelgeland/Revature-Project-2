@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFriendComponent } from './search-friend/search-friend.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { SearchFriendComponent } from './search-friend/search-friend.component';
     HomeComponent,
     UserProfileComponent,
     UserMenuComponent,    
-    UpdateFormComponent
+    UpdateFormComponent,
+    SearchFriendComponent
   ],
   imports: [
     BrowserModule,
