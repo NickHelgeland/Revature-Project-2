@@ -10,6 +10,11 @@ import { UserFieldComponent } from './user-field/user-field.component';
 import { HomeComponent } from './home/home.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
+import { UpdateFormComponent } from './components/update-form/update-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchFriendComponent } from './search-friend/search-friend.component';
 
 @NgModule({ // put here our components
   declarations: [
@@ -20,11 +25,14 @@ import { UserMenuComponent } from './user-menu/user-menu.component';
     UserFieldComponent,
     HomeComponent,
     UserProfileComponent,
-    UserMenuComponent    
+    UserMenuComponent,    
+    UpdateFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]

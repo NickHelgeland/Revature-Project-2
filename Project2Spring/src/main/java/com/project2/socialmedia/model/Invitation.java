@@ -20,37 +20,37 @@ public class Invitation {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long invitationid;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional=false)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "sender", referencedColumnName="username")
-	private User senders;
+	private Users senders;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional=false)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "receiver", referencedColumnName="username")
-	private User receivers;
+	private Users receivers;
 	
 	public Invitation() {}	
 	
 
-	public Invitation(User senders, User receivers) {
+	public Invitation(Users senders, Users receivers) {
 		super();
 		this.senders = senders;
 		this.receivers = receivers;
 	}
 
 
-	public User getSenders() {
+	public Users getSenders() {
 		return senders;
 	}
 
-	public void setSenders(User senders) {
+	public void setSenders(Users senders) {
 		this.senders = senders;
 	}
 
-	public User getReceivers() {
+	public Users getReceivers() {
 		return receivers;
 	}
 
-	public void setReceivers(User receivers) {
+	public void setReceivers(Users receivers) {
 		this.receivers = receivers;
 	}
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
+import { EventEmitter } from 'events';
+import { RoutingService } from '../routing.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,10 +9,29 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-    
-  constructor(private appComponent: AppComponent) {    
-  }  
+
+  credentials = {
+      username : "",
+      password : ""
+  }
+
+  constructor(private routingService: RoutingService, private http: HttpClient) { } 
+  
+  login()
+  {
+    this.http.post("http://localhost:9009/Project2Spring/api/login", this.credentials).subscribe(
+      data => {
+        if (data.result == "success")
+        {
+          this.routingService.emitChange('user-field')
+        }
+      },
+      error => {
+        console.log('Error occured', error);
+      }
+    )
+  }
 
   ngOnInit() {
-  }  
+  }
 }
