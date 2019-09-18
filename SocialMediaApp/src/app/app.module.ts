@@ -10,11 +10,8 @@ import { UserFieldComponent } from './user-field/user-field.component';
 import { HomeComponent } from './home/home.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
-import { UpdateFormComponent } from './components/update-form/update-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
 
-@NgModule({
+@NgModule({ // put here our components
   declarations: [
     AppComponent,
     SignUpComponent,
@@ -23,15 +20,13 @@ import { FormsModule } from '@angular/forms';
     UserFieldComponent,
     HomeComponent,
     UserProfileComponent,
-    UserMenuComponent,    
-    UpdateFormComponent
+    UserMenuComponent    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

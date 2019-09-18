@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'SocialMediaApp';    
+  title = 'SocialMediaApp';
+  isOn: boolean = true;
+  is_On: boolean = false;
+  
+  togglePage() {
+    if(this.isOn) {
+      this.isOn = false;
+      this.is_On;
+    } else {
+      this.is_On;
+      this.isOn = true;
+    }
+  }
+  
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventEmitter } from 'events';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,20 +7,10 @@ import { EventEmitter } from 'events';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-
-  submit = new EventEmitter();
-
-  constructor() {    
+    
+  constructor(private appComponent: AppComponent) {    
   }  
 
   ngOnInit() {
-  }
-
-//   const self = this;
-//   dialog.componentInstance.submit.subscribe({
-//    next(value) {
-//       self.isOn = false;
-//    }
-// });
-
+  }  
 }
