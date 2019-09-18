@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventEmitter } from 'events';
 import { RoutingService } from '../routing.service';
 import { HttpClient } from '@angular/common/http';
+import { Result } from '../result';
 
 @Component({
   selector: 'app-sign-in',
@@ -19,8 +20,8 @@ export class SignInComponent implements OnInit {
   
   login()
   {
-    this.http.post("http://localhost:9009/Project2Spring/api/login", this.credentials).subscribe(
-      data => {
+    this.http.post("http://localhost:9005/Project2Spring/api/login", this.credentials).subscribe(
+      (data: Result) => {
         if (data.result == "success")
         {
           this.routingService.emitChange('user-field')

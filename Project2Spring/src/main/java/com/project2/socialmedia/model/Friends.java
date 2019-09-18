@@ -39,16 +39,6 @@ public class Friends
 		this.friend = friend2;
 	}
 
-//	public Users getFriend1()
-//	{
-//		return person;
-//	}
-//
-//	public void setFriend1(Users friend1)
-//	{
-//		this.person = friend1;
-//	}
-
 	public Users getFriend2()
 	{
 		return friend;
