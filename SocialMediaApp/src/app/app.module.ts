@@ -36,7 +36,7 @@ import { SearchFriendComponent } from './search-friend/search-friend.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

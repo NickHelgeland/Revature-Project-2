@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -14,16 +13,16 @@ import javax.persistence.Table;
 public class Users {
 	@Id
 	@Column(name="username")
-	private String userName;
+	private String username;
 	
 	@Column(name = "password", nullable = false)
-	private String passWord;
+	private String password;
 	
 	@Column(name = "firstname", nullable = false)
-	private String firstName;
+	private String firstname;
 	
 	@Column(name = "lastname", nullable = false)
-	private String lastName;
+	private String lastname;
 	
 	@Column(name = "email", nullable = false)
 	private String email;
@@ -31,30 +30,24 @@ public class Users {
 	@Column(name = "address", nullable = false)
 	private String address;
 	
-	@OneToMany(mappedBy = "senders")
-	private List<Invitation> senderList;
-	
-	@OneToMany(mappedBy = "receivers")
-	private List<Invitation> receiverList;
-	
 	@OneToMany(mappedBy = "owner")
 	private List<Post> postList;
 	
-	@OneToMany(mappedBy = "friend1")
-	private List<Friends> frind1List;
+	@OneToMany(mappedBy = "person")
+	private List<Friends> friendList;
 	
-	@OneToMany(mappedBy = "friend2")
-	private List<Friends> friend2List;
+	@OneToMany(mappedBy = "senders")
+	private List<Invitation> invList;
 	
 	public Users() {
 	}
 
 	public Users(String userName, String passWord, String firstName, String lastName, String email, String address) {
 		super();
-		this.userName = userName;
-		this.passWord = passWord;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.username = userName;
+		this.password = passWord;
+		this.firstname = firstName;
+		this.lastname = lastName;
 		this.email = email;
 		this.address = address;
 	}
@@ -64,51 +57,48 @@ public class Users {
 			List<Invitation> senderList, List<Invitation> receiverList, List<Post> postList, List<Friends> frind1List,
 			List<Friends> friend2List) {
 		super();
-		this.userName = userName;
-		this.passWord = passWord;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.username = userName;
+		this.password = passWord;
+		this.firstname = firstName;
+		this.lastname = lastName;
 		this.email = email;
 		this.address = address;
-		this.senderList = senderList;
-		this.receiverList = receiverList;
 		this.postList = postList;
-		this.frind1List = frind1List;
-		this.friend2List = friend2List;
+		this.friendList = friend2List;
 	}
 
 
 
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 
 	public String getPassWord() {
-		return passWord;
+		return password;
 	}
 
 	public void setPassWord(String passWord) {
-		this.passWord = passWord;
+		this.password = passWord;
 	}
 
 	public String getFirstName() {
-		return firstName;
+		return firstname;
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstname = firstName;
 	}
 
 	public String getLastName() {
-		return lastName;
+		return lastname;
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastname = lastName;
 	}
 
 	public String getEmail() {
@@ -127,22 +117,6 @@ public class Users {
 		this.address = address;
 	}
 
-	public List<Invitation> getSenderList() {
-		return senderList;
-	}
-
-	public void setSenderList(List<Invitation> senderList) {
-		this.senderList = senderList;
-	}
-
-	public List<Invitation> getReceiverList() {
-		return receiverList;
-	}
-
-	public void setReceiverList(List<Invitation> receiverList) {
-		this.receiverList = receiverList;
-	}
-
 	public List<Post> getPostList() {
 		return postList;
 	}
@@ -151,28 +125,26 @@ public class Users {
 		this.postList = postList;
 	}
 
-	public List<Friends> getFrind1List() {
-		return frind1List;
+	public List<Friends> getFriendList() {
+		return friendList;
 	}
 
-	public void setFrind1List(List<Friends> frind1List) {
-		this.frind1List = frind1List;
+	public void setFriendList(List<Friends> friendList) {
+		this.friendList = friendList;
 	}
 
-	public List<Friends> getFriend2List() {
-		return friend2List;
+	public List<Invitation> getInvList() {
+		return invList;
 	}
 
-	public void setFriend2List(List<Friends> friend2List) {
-		this.friend2List = friend2List;
+	public void setInvList(List<Invitation> invList) {
+		this.invList = invList;
 	}
 
 	@Override
 	public String toString() {
-		return "User [userName=" + userName + ", passWord=" + passWord + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + ", address=" + address + ", senderList=" + senderList
-				+ ", receiverList=" + receiverList + ", postList=" + postList + ", frind1List=" + frind1List
-				+ ", friend2List=" + friend2List + "]";
+		return "User [userName=" + username + ", passWord=" + password + ", firstName=" + firstname + ", lastName="
+				+ lastname + ", email=" + email + ", address=" + address + ", postList=" + postList + ", friendList=" + friendList + "]";
 	}
 
 	
