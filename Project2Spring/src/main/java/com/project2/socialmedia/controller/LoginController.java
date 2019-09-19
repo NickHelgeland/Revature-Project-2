@@ -22,7 +22,7 @@ public class LoginController
 	
 	@CrossOrigin
 	@PostMapping(value="/login")
-	public @ResponseBody Result login(@RequestBody Credentials credentials, HttpSession httpSession)
+	public Result login(@RequestBody Credentials credentials, HttpSession httpSession)
 	{
 		Result result = new Result("failed");
 		

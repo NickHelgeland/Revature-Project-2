@@ -1,0 +1,29 @@
+2019-09-18 20:08:44 INFO  Version:45 - HHH000412: Hibernate Core {5.2.17.Final}
+2019-09-18 20:08:44 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-18 20:08:44 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-18 20:08:45 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-18 20:11:35 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-18 20:13:20 INFO  Version:45 - HHH000412: Hibernate Core {5.2.17.Final}
+2019-09-18 20:13:20 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-18 20:13:20 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-18 20:13:21 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-18 20:15:24 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-18 20:15:30 INFO  Version:45 - HHH000412: Hibernate Core {5.2.17.Final}
+2019-09-18 20:15:30 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-18 20:15:30 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-18 20:15:30 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-18 20:16:41 INFO  Version:45 - HHH000412: Hibernate Core {5.2.17.Final}
+2019-09-18 20:16:41 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-18 20:16:42 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-18 20:16:42 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-18 20:16:50 INFO  Version:45 - HHH000412: Hibernate Core {5.2.17.Final}
+2019-09-18 20:16:50 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-18 20:16:50 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-18 20:16:51 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-18 20:22:21 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-18 20:22:52 INFO  Version:45 - HHH000412: Hibernate Core {5.2.17.Final}
+2019-09-18 20:22:52 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-18 20:22:52 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-18 20:22:53 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-18 20:25:34 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-18 20:25:35 INFO  LoggingAspect:18 - A user has logged in.
