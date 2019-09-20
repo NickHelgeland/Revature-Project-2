@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-user-field',
   templateUrl: './user-field.component.html',
   styleUrls: ['./user-field.component.css']
 })
-export class UserFieldComponent implements OnInit {  
+export class UserFieldComponent implements OnInit { 
 
-  constructor(private appComponent: AppComponent) { }
+  tData: string = '';
+  likeCounter: number = 0;
+  
+  constructor() { }
 
-  ngOnInit() {
-  } 
-
+  likeCount() {
+    this.likeCounter += 1;
+  }
+  
+  ngOnInit() { }  
 }

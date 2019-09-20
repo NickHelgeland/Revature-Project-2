@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-search-friend',
@@ -9,11 +8,9 @@ import {HttpClient} from '@angular/common/http';
 })
 export class SearchFriendComponent implements OnInit {
 
-  userSF:string='';
-
-  myresponse: any;
-  myresp: any;
-
+  searchText: string;
+  myresponse; myresp;
+  
   APP_URL = 'http://localhost:9005/Project2Spring/api/';
 
   constructor(private _http: HttpClient) {
@@ -27,23 +24,40 @@ export class SearchFriendComponent implements OnInit {
         console.log('Error occured', error);
       }
     )
-
-   }
-
-  ngOnInit() {
-   
   }
+  
+  // Search() {
+  //   let search_input: any = this.searchText.toLowerCase().toString();
+  //   if(search_input != '' || search_input != null) {
+  //     this.myresponse = this.myresponse.filter(res => {
+  //     return res.firstName.toLowerCase().match(search_input) })
+  //     // this.myresponse = this.myresponse.filter(search_input);      
+  //   }else {
+  //     console.log('Please input something');
+  //   }
+  // }
 
-  Search(){
-    if(this.userSF != ''){
-      this.myresponse = this.myresponse.filter(res => {
-        return res.firstName.toLocaleLowerCase .match(this.userSF.toLocaleLowerCase)
-      })
-    }else if(this.userSF == null){
-      this.myresponse = this.myresp;
+  searchTable() {    
+    let input, filter, table, tr, td, tdl, i, txtValue, txtValuel;
+    input = document.querySelector("#myInput");
+    filter = input.value.toLowerCase();
+    table = document.querySelector("#myTable");
+    tr = table.querySelectorAll("tr");
+    
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].querySelectorAll("td")[0];
+        tdl = tr[i].querySelector("#tdl");
+        if (td || tdl) {
+            txtValue = td.textContent || td.innerText;
+            txtValuel = tdl.textContent || tdl.innerText;
+            if (txtValue.toLowerCase().indexOf(filter) > -1 || txtValuel.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        } 
     }
-
-   
   }
 
+  ngOnInit() { }
 }

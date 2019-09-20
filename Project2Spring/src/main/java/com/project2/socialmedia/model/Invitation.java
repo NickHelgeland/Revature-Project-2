@@ -47,15 +47,6 @@ public class Invitation {
 		this.senders = senders;
 	}
 
-	public Users getReceivers() {
-		return receiver;
-	}
-
-	public void setReceivers(Users receivers) {
-		this.receiver = receivers;
-	}
-
-
 	@Override
 	public String toString() {
 		return "Invitation [senders=" + senders + ", receiver=" + receiver + "]";

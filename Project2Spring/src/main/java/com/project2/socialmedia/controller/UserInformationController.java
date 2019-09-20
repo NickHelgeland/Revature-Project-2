@@ -23,5 +23,4 @@ public class UserInformationController {
 	public /*@ResponseBody*/ List<Users>  getAllUser() {
 		return userDao.selectAll();
 	}
-
 }

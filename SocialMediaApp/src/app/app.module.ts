@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchFriendComponent } from './search-friend/search-friend.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { InvitationComponent } from './invitation/invitation.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     UserMenuComponent,    
     UpdateFormComponent,
     SearchFriendComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,        
+    InvitationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule    
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]

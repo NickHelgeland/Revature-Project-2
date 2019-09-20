@@ -23,18 +23,19 @@ export class SignInComponent implements OnInit {
   
   login()
   {
-    this.credentials.password = this._encryptor.hash(this.password)
-    this.http.post("http://localhost:9005/Project2Spring/api/login", this.credentials).subscribe(
-      (data: Result) => {
-        if (data.result == "success")
-        {
-          this.routingService.emitChange('user-field')
-        }
-      },
-      error => {
-        console.log('Error occured', error);
-      }
-    )
+    // this.credentials.password = this._encryptor.hash(this.password)
+    // this.http.post("http://localhost:9005/Project2Spring/api/login", this.credentials).subscribe(
+    //   (data: Result) => {
+    //     if (data.result == "success")
+    //     {
+    //       this.routingService.emitChange('user-field')
+    //     }
+    //   },
+    //   error => {
+    //     console.log('Error occured', error);
+    //   }
+    // )
+    this.routingService.emitChange('user-field')
   }
 
   ngOnInit() {
