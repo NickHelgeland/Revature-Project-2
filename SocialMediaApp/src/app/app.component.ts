@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  isOn: Boolean = true
+  
+  isOn: Boolean = true;  
 
   constructor(private routingService: RoutingService, private router: Router) 
   {  
@@ -19,7 +19,7 @@ export class AppComponent {
             this.router.navigate([text])
         }
       )
-  }
+  }  
 
   title = 'SocialMediaApp';  
 }

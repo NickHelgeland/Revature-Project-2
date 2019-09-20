@@ -425,6 +425,7 @@ header {
 }
 
 nav {
+    margin-left: 100px;
     float: left;
     text-align: right;
     padding-right: 2.5rem;
@@ -905,7 +906,7 @@ nav ul li span img {
 }
 
 .text_descp>p {
-    color: #666666;
+    color: #000000;
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 20px;
@@ -996,7 +997,7 @@ nav ul li span img {
     border-radius: 5px;
     background-color: #efefef;
     padding-left: 10px;
-    color: #b2b2b2;
+    color: #000000;
     font-size: 18px;
     font-weight: 600;
     line-height: 40px;

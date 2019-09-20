@@ -7,6 +7,8 @@ import { PassRecoveryComponent } from './pass-recovery/pass-recovery.component';
 import { UserFieldComponent } from './user-field/user-field.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
+import { SearchFriendComponent } from './search-friend/search-friend.component';
+import { InvitationComponent } from './invitation/invitation.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: 'pass-recovery', component: PassRecoveryComponent },
   { path: 'user-field', component: UserFieldComponent },
   { path: 'user-profile', component: UserProfileComponent },
-  { path: 'user-menu', component: UserMenuComponent }
+  { path: 'user-menu', component: UserMenuComponent },
+  { path: 'search-friend', component: SearchFriendComponent },
+  { path: 'invitation', component: InvitationComponent }
 ];
 
 @NgModule({
