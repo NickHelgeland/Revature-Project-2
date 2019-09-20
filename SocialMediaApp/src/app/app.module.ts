@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFriendComponent } from './search-friend/search-friend.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SearchFriendComponent } from './search-friend/search-friend.component';
     UserProfileComponent,
     UserMenuComponent,    
     UpdateFormComponent,
-    SearchFriendComponent
+    SearchFriendComponent,
+    ChangepasswordComponent
   ],
   imports: [
     BrowserModule,
