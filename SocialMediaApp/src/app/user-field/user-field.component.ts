@@ -7,7 +7,7 @@ import { s3 } from 'fine-uploader/lib/core/s3';
   templateUrl: './user-field.component.html',
   styleUrls: ['./user-field.component.css']
 })
-export class UserFieldComponent implements OnInit {  
+export class UserFieldComponent implements OnInit { 
 
   async uploadFile(event)
   {
@@ -27,5 +27,14 @@ export class UserFieldComponent implements OnInit {
 
   ngOnInit() {
   } 
+  tData: string = '';
+  likeCounter: number = 0;
+  
+  constructor() { }
 
+  likeCount() {
+    this.likeCounter += 1;
+  }
+  
+  ngOnInit() { }  
 }

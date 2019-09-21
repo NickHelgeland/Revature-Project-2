@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.project2.socialmedia.dao.UserDAO;
+import com.project2.socialmedia.model.Email;
 import com.project2.socialmedia.model.Users;
 
 public class MainDriver {

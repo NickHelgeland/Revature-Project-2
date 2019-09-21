@@ -32,11 +32,11 @@
     </div>
 </header>
 
-<div class="filterSort">
-    <input id="myInput" type="text" (input)="searchTable()" placeholder="Search..." />
-</div>
+<!-- <div class="filterSort">
+    <input id="myInput" type="text" [(ngModel)]="userSF" (input)="searchTable()" placeholder="Search..." />
+</div> -->
 
-<div class="table-view" *ngIf="myresponse">
+<div class="table-view-invitatation" *ngIf="myresponse">
     <table id="myTable" class="table table-bordered table-responsive-md sortable">
         <thead>
             <tr>
@@ -49,7 +49,10 @@
             <tr *ngFor="let user of myresponse">
                 <td>{{user.firstName}}</td>
                 <td id="tdl">{{user.lastName}}</td>
-                <td><button type="submit" value="submit" id="button" (input)="Invite()">Invitation</button></td>
+                <td>
+                    <button type="submit" value="submit" id="button" (input)="Accept()">Accept</button>
+                    <button type="submit" value="submit" id="button" (input)="Ignore()">Ignore</button>
+                </td>
             </tr>
         </tbody>
     </table>
