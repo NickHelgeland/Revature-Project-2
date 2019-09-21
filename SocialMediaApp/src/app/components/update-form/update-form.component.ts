@@ -6,9 +6,15 @@ import {HttpClient} from '@angular/common/http';
   templateUrl: './update-form.component.html',
   styleUrls: ['./update-form.component.css']
 })
-// export class UpdateFormComponent implements OnInit {
-  export class UpdateFormComponent {
+export class UpdateFormComponent implements OnInit {
+  // export class UpdateFormComponent {
   myresponse: any;
+  profileData: string;
+  profileUpdate: string;
+  firstNameUpdateInput: string;
+  lastNameUpdateInput: string;
+  emailUpdateInput: string;
+  addressUpdateInput: string;
 
   APP_URL = 'http://localhost:9005/Project2Spring/api';
 
@@ -19,14 +25,10 @@ import {HttpClient} from '@angular/common/http';
   // }
   
   // constructor() { }
-
-  // ngOnInit() {
-  // }
-
   constructor(private _http: HttpClient) {}
 
-  getAllEmployees() {
-    this._http.get(this.APP_URL + '/getUsers').subscribe(
+  ngOnInit() {
+    this._http.get(this.APP_URL + '/getLoggedInUser').subscribe(
       data => {
         this.myresponse = data;
       },
@@ -35,5 +37,22 @@ import {HttpClient} from '@angular/common/http';
       }
     )
   }
+
+  GetUserData() {
+    this._http.get(this.APP_URL + '/updateUser' + this.profileUpdate).subscribe(
+      data => {
+        this.myresponse = data;
+      },
+      error => {
+        console.log('Error occured', error);
+      }
+    )
+  }
+
+  //add the same method above for the other profile fields, unless we are able to just
+  //have 1 method that updates the fields that are entered, without causing
+  //blank fields to make profile info null, also need to see they specifics of
+  //connecting the method to our database names
+  //im thinking we just need a dao method for updating data
 
 }

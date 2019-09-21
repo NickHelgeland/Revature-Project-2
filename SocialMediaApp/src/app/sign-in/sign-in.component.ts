@@ -28,7 +28,7 @@ export class SignInComponent implements OnInit {
       (data: Result) => {
         if (data.result == "success")
         {
-          this.routingService.emitChange('user-field')
+          this.routingService.emitChange('update-form')
         }
       },
       error => {
