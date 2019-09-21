@@ -28,7 +28,7 @@ public class UserDAO implements Insert<Users>, Update<Users>
 
 	
 	public void update(Users obj) {
-		sf.getCurrentSession().update(obj);		
+		sf.getCurrentSession().merge(obj);		
 	}
 
 	

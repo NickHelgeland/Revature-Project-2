@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppComponent } from '../app.component';
-import { s3 } from 'fine-uploader/lib/core/s3';
 
 @Component({
   selector: 'app-user-field',
@@ -10,13 +9,15 @@ import { s3 } from 'fine-uploader/lib/core/s3';
 })
 export class UserFieldComponent implements OnInit { 
 
-  myresponse; myresp;  
-  APP_URL = 'http://localhost:9005/Project2Spring/api/';
+  baseUrl: string = "http://localhost:9005/Project2Spring/api/"
+
+  tData: string = '';
+  likeCounter: number = 0;
 
   async uploadFile(event)
   {
     let file = event.target.files[0]
-    let urlResponse = await fetch('http://localhost:9005/Project2Spring/api/s3/' + file.name, {
+    let urlResponse = await fetch(this.baseUrl + 's3/' + file.name, {
       method: 'PUT'
     })
     let signedUrl = await urlResponse.text()
@@ -25,22 +26,19 @@ export class UserFieldComponent implements OnInit {
       method: 'PUT',
       body: file
     })
+    this.updateProfilePicture(file.name)
   }
-  tData: string = '';
-  likeCounter: number = 0;
-  
-  constructor(private _http: HttpClient) {
 
-    this._http.get(this.APP_URL + 'getUsers').subscribe(
-      data => {
-        this.myresponse = data;
-        this.myresp = this.myresponse;
-      },
-      error => {
-        console.log('Error occured', error);
-      }
-    )
-   }
+  updateProfilePicture(filename: string)
+  {
+    let image = {
+      name : filename,
+      username : this._session.getUsername()
+    }
+
+    this._http.post(this.baseUrl + 'updateImage', image).subscribe()
+    alert("Image has been uploaded")
+  }
 
   likeCount() {
     this.likeCounter += 1;
@@ -49,6 +47,10 @@ export class UserFieldComponent implements OnInit {
   inputData() {
     this.tData = this.tData;
   }
+  
+  constructor(private _http: HttpClient, private _session: SessionService) { }
+
+  
   
   ngOnInit() { }  
 }
