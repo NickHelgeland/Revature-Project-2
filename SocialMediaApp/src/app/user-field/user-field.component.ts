@@ -22,11 +22,6 @@ export class UserFieldComponent implements OnInit {
       body: file
     })
   }
-
-  constructor(private appComponent: AppComponent) { }
-
-  ngOnInit() {
-  } 
   tData: string = '';
   likeCounter: number = 0;
   
