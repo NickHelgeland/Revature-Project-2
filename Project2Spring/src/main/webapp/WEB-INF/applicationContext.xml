@@ -53,9 +53,7 @@
 	</bean>
 	
 	<bean name="userRepo" scope="singleton" class="com.project2.socialmedia.dao.UserDAO" />
-	<bean name="friendsRepo" scope="singleton" class="com.project2.socialmedia.dao.FriendsDAO" />
 	<bean name="postRepo" scope="singleton" class="com.project2.socialmedia.dao.PostDAO" />
-	<bean name="invitationRepo" scope="singleton" class="com.project2.socialmedia.dao.InvitationDAO" />
 	<bean name="s3Util" scope="singleton" class="com.project2.socialmedia.utiles.S3FileUtil" />
 
 </beans>

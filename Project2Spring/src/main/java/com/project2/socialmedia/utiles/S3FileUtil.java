@@ -16,13 +16,10 @@ import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 @Component
 public class S3FileUtil implements InitializingBean {
 
-//	@Value("${aws.s3.bucketName}")
 	private String bucketName = System.getenv("AWS_S3_BUCKET_NAME");
 
-//	@Value("${aws.sdk.accessKey}")
 	private String accessKey = System.getenv("AWS_ACCESS_KEY");
 
-//	@Value("${aws.sdk.secretAccessKey}")
 	private String secretAccessKey = System.getenv("AWS_SECRET_ACCESS_KEY");
 
 	private String region = "us-east-2";
