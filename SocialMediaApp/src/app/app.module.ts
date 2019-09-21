@@ -24,6 +24,7 @@ import { RequestpasswordComponent } from './requestpassword/requestpassword.comp
 @NgModule({
   declarations: [
     AppComponent,
+    ReactiveFormsModule,
     SignUpComponent,
     SignInComponent,
     PassRecoveryComponent,

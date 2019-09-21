@@ -57,3 +57,27 @@ th {
     /* transition: all 0.5s ease; */
     overflow: auto;
 }
+
+#invite {
+    width: 10px;
+}
+
+#button1 {
+    background-image: url('../../assets/like_PNG70a.png');
+    height: 29px;
+    width: 29px;
+    display: flex;
+    border-radius: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+#button2 {
+    background-image: url('../../assets/dis_like.png');
+    height: 29px;
+    width: 29px;
+    display: flex;
+    border-radius: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+}
