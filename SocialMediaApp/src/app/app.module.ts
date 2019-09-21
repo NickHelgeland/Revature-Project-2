@@ -19,10 +19,12 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InvitationComponent } from './invitation/invitation.component';
+import { RequestpasswordComponent } from './requestpassword/requestpassword.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ReactiveFormsModule,
     SignUpComponent,
     SignInComponent,
     PassRecoveryComponent,
@@ -33,7 +35,7 @@ import { InvitationComponent } from './invitation/invitation.component';
     UpdateFormComponent,
     SearchFriendComponent,
     ChangepasswordComponent,        
-    InvitationComponent
+    InvitationComponent, RequestpasswordComponent
   ],
   imports: [
     BrowserModule,

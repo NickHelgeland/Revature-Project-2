@@ -8,7 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  newUser= {
+    username: '',
+    password: ''
+  }
   isOn: Boolean = true;  
 
   constructor(private routingService: RoutingService, private router: Router) 
@@ -22,4 +25,7 @@ export class AppComponent {
   }  
 
   title = 'SocialMediaApp';  
+
+
+  
 }

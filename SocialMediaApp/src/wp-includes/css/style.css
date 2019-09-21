@@ -2,10 +2,11 @@
 
 /* ================= sign-in ================ */
 
-body {
-    background-image: url('../../assets/social-media.png');
-    max-width: auto;
-}
+
+/* body {
+    background-image: url('../../assets/15490.jpg');
+    background-repeat: no-repeat;
+} */
 
 .main {
     font-size: 22px;

@@ -71,7 +71,7 @@
         <div class="post_topbar">
             <div class="usy-dt">
                 <div class="usy-name">
-                    <h3>John Doeh</h3>
+                    <h3>{{user.firstName}}</h3>
                 </div>
             </div>
             <div class="ed-opts">
@@ -109,7 +109,7 @@
             <div class="post-comment">
                 <div class="comment_box">
                     <form>
-                        <input type="text" placeholder="Post a comment" autocomplete="off" [(ngModel)]="tData">
+                        <input type="text" placeholder="Post a comment" [(ngModel)]="tData" (input)="inputData()">
                         <button type="submit">Send</button>
                     </form>
                 </div>

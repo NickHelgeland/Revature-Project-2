@@ -37,6 +37,12 @@ public class UserDAO implements Insert<Users>, Update<Users>
 		Users user = session.createQuery("from Users where username='" + username + "'", Users.class).uniqueResult();
 		return user;
 	}
+	
+	public Users selectOneEmail(String email) {
+		Session session = sf.openSession();
+		Users user = session.createQuery("from Users where email='" + email + "'", Users.class).uniqueResult();
+		return user;
+	}
 
 	public List<Users> selectAll() {
 		Session session = sf.openSession();

@@ -39,8 +39,7 @@ public class Users {
 	public Users() {
 	}
 
-	public Users(String userName, String passWord, String firstName, String lastName, String email, String address, String imageName) {
-		super();
+	public Users(String userName, String passWord, String firstName, String lastName, String email, String address, String imageName) {		
 		this.username = userName;
 		this.password = passWord;
 		this.firstname = firstName;
@@ -51,8 +50,7 @@ public class Users {
 	}
 
 
-	public Users(String userName, String passWord, String firstName, String lastName, String email, String address, String imageName, List<Post> postList) {
-		super();
+	public Users(String userName, String passWord, String firstName, String lastName, String email, String address, String imageName, List<Post> postList) {		
 		this.username = userName;
 		this.password = passWord;
 		this.firstname = firstName;

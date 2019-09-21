@@ -5,8 +5,7 @@ public class Result
 	String result = "";
 
 	public Result(String result)
-	{
-		super();
+	{		
 		this.result = result;
 	}
 

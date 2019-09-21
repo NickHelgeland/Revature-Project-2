@@ -32,10 +32,6 @@
     </div>
 </header>
 
-<!-- <div class="filterSort">
-    <input id="myInput" type="text" [(ngModel)]="userSF" (input)="searchTable()" placeholder="Search..." />
-</div> -->
-
 <div class="table-view-invitatation" *ngIf="myresponse">
     <table id="myTable" class="table table-bordered table-responsive-md sortable">
         <thead>
@@ -49,9 +45,11 @@
             <tr *ngFor="let user of myresponse">
                 <td>{{user.firstName}}</td>
                 <td id="tdl">{{user.lastName}}</td>
-                <td>
-                    <button type="submit" value="submit" id="button" (input)="Accept()">Accept</button>
-                    <button type="submit" value="submit" id="button" (input)="Ignore()">Ignore</button>
+                <td id="invite">
+                    <div class="row">
+                        <button type="submit" value="submit" id="button1" (input)="Accept()"></button>
+                        <button type="submit" value="submit" id="button2" (input)="Ignore()"></button>
+                    </div>
                 </td>
             </tr>
         </tbody>

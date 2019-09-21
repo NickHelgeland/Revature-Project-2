@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
 import { HttpClient } from '@angular/common/http';
-import { SessionService } from '../session.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-user-field',
@@ -43,6 +42,10 @@ export class UserFieldComponent implements OnInit {
 
   likeCount() {
     this.likeCounter += 1;
+  }
+
+  inputData() {
+    this.tData = this.tData;
   }
   
   constructor(private _http: HttpClient, private _session: SessionService) { }

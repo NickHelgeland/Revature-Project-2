@@ -7,8 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./search-friend.component.css']
 })
 export class SearchFriendComponent implements OnInit {
-
-  searchText: string;
+  
   myresponse; myresp;
   
   APP_URL = 'http://localhost:9005/Project2Spring/api/';
@@ -26,17 +25,6 @@ export class SearchFriendComponent implements OnInit {
     )
   }
   
-  // Search() {
-  //   let search_input: any = this.searchText.toLowerCase().toString();
-  //   if(search_input != '' || search_input != null) {
-  //     this.myresponse = this.myresponse.filter(res => {
-  //     return res.firstName.toLowerCase().match(search_input) })
-  //     // this.myresponse = this.myresponse.filter(search_input);      
-  //   }else {
-  //     console.log('Please input something');
-  //   }
-  // }
-
   searchTable() {    
     let input, filter, table, tr, td, tdl, i, txtValue, txtValuel;
     input = document.querySelector("#myInput");
