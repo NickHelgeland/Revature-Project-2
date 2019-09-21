@@ -1,5 +1,7 @@
 package com.project2.socialmedia.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +19,8 @@ public class UserUpdateInformationController {
 	
 	@CrossOrigin(origins="http://localhost:4200")
 	@PostMapping("/updateUser")
-	public void  updateUser(@RequestBody Users user) {
+	public void  updateUser(@RequestBody Users user, HttpSession session) {
+		session.setAttribute("username", user);
 		userDao.update(user);
 	}
 }

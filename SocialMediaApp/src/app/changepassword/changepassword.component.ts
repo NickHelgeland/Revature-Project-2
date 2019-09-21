@@ -1,38 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { EncryptService } from '../encrypt.service';
 import { HttpClient } from '@angular/common/http';
-import { RoutingService } from '../routing.service';
-import { Result } from '../result';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-changepassword',
   templateUrl: './changepassword.component.html',
   styleUrls: ['./changepassword.component.css']
 })
-export class ChangepasswordComponent implements OnInit {
+export class ChangepasswordComponent implements OnInit { 
 
-  User = {
-      username : "",
-      email : ""
-  }
+  password: string;
+  cpassword: string;
 
-  constructor(private routingService: RoutingService, private http: HttpClient) { }
-
-  login()
-  {
-      this.http.post("http://localhost:9005/Project2Spring/api/login", this.User).subscribe(
-      (data: Result) => {
-        if (data.result == "success")
-        {
-          this.routingService.emitChange('user-field')
-        }
-      },
-      error => {
-        console.log('Error occured', error);
-      }
-    )
-  }
+  constructor(private _http: HttpClient, private _router: Router, private _encryptor: EncryptService) { }
 
   ngOnInit() {
   }
 
+  requetP()
+  {
+    this.cpassword = this._encryptor.hash(this.password);
+    this._http.post("http://localhost:9005/Project2Spring/api/change", this.cpassword).subscribe()
+  }
+  
 }
