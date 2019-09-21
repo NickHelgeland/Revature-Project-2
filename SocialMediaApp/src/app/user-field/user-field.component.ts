@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppComponent } from '../app.component';
+import { SessionService } from '../session.service';
 
 @Component({
   selector: 'app-user-field',
