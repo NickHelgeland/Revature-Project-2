@@ -30,19 +30,16 @@ public class Users {
 	@Column(name = "address", nullable = false)
 	private String address;
 	
+	@Column(name = "image_name")
+	private String imageName;
+	
 	@OneToMany(mappedBy = "owner")
 	private List<Post> postList;
-	
-	@OneToMany(mappedBy = "person")
-	private List<Friends> friendList;
-	
-	@OneToMany(mappedBy = "senders")
-	private List<Invitation> invList;
 	
 	public Users() {
 	}
 
-	public Users(String userName, String passWord, String firstName, String lastName, String email, String address) {
+	public Users(String userName, String passWord, String firstName, String lastName, String email, String address, String imageName) {
 		super();
 		this.username = userName;
 		this.password = passWord;
@@ -50,12 +47,11 @@ public class Users {
 		this.lastname = lastName;
 		this.email = email;
 		this.address = address;
+		this.imageName = imageName;
 	}
 
 
-	public Users(String userName, String passWord, String firstName, String lastName, String email, String address,
-			List<Invitation> senderList, List<Invitation> receiverList, List<Post> postList, List<Friends> frind1List,
-			List<Friends> friend2List) {
+	public Users(String userName, String passWord, String firstName, String lastName, String email, String address, String imageName, List<Post> postList) {
 		super();
 		this.username = userName;
 		this.password = passWord;
@@ -63,11 +59,9 @@ public class Users {
 		this.lastname = lastName;
 		this.email = email;
 		this.address = address;
+		this.imageName = imageName;
 		this.postList = postList;
-		this.friendList = friend2List;
 	}
-
-
 
 	public String getUserName() {
 		return username;
@@ -125,26 +119,18 @@ public class Users {
 		this.postList = postList;
 	}
 
-	public List<Friends> getFriendList() {
-		return friendList;
+	public String getImageName() {
+		return imageName;
 	}
 
-	public void setFriendList(List<Friends> friendList) {
-		this.friendList = friendList;
-	}
-
-	public List<Invitation> getInvList() {
-		return invList;
-	}
-
-	public void setInvList(List<Invitation> invList) {
-		this.invList = invList;
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
 	}
 
 	@Override
 	public String toString() {
 		return "User [userName=" + username + ", passWord=" + password + ", firstName=" + firstname + ", lastName="
-				+ lastname + ", email=" + email + ", address=" + address + ", postList=" + postList + ", friendList=" + friendList + "]";
+				+ lastname + ", email=" + email + ", address=" + address + ", postList=" + postList + "]";
 	}
 
 	
