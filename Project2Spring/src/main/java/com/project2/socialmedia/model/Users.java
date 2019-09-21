@@ -42,8 +42,7 @@ public class Users {
 	public Users() {
 	}
 
-	public Users(String userName, String passWord, String firstName, String lastName, String email, String address) {
-		super();
+	public Users(String userName, String passWord, String firstName, String lastName, String email, String address) {		
 		this.username = userName;
 		this.password = passWord;
 		this.firstname = firstName;
@@ -55,8 +54,7 @@ public class Users {
 
 	public Users(String userName, String passWord, String firstName, String lastName, String email, String address,
 			List<Invitation> senderList, List<Invitation> receiverList, List<Post> postList, List<Friends> frind1List,
-			List<Friends> friend2List) {
-		super();
+			List<Friends> friend2List) {		
 		this.username = userName;
 		this.password = passWord;
 		this.firstname = firstName;

@@ -21,6 +21,7 @@ import { InvitationComponent } from './invitation/invitation.component';
 @NgModule({
   declarations: [
     AppComponent,
+    ReactiveFormsModule,
     SignUpComponent,
     SignInComponent,
     PassRecoveryComponent,

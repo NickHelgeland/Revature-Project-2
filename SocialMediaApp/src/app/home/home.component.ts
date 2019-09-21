@@ -1,6 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
-import { RoutingService } from '../routing.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +12,7 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
+    document.body.classList.add('bg-img');
   }  
 
 }
