@@ -28,7 +28,7 @@ public class EmailUserController {
 		httpSession.setAttribute("user", requestUser);
 		System.out.println(requestUser);
 		
-//		Users user = userDao.selectOneEmail(requestUser.getEmail());		
+		Users user = userDao.selectOneEmail(requestUser.getEmail());		
 //		user.setPassWord(requestUser.getEcryptP());
 //		userDao.update(user);		
 //		Email email = new Email();
