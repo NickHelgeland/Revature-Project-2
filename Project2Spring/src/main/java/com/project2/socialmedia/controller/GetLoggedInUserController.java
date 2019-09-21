@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project2.socialmedia.dao.Select;
 import com.project2.socialmedia.dao.UserDAO;
 import com.project2.socialmedia.model.Users;
 
