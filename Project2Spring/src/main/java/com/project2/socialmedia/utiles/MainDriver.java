@@ -2,6 +2,8 @@ package com.project2.socialmedia.utiles;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,14 +15,10 @@ public class MainDriver {
 
 	public static void main(String[] args) {
 		
-		Email email = new Email();
-		Users user = new Users();
-		
-		user.setFirstName("Fausto");
-		user.setEmail("frerespinoza@gmail.com");
-		
-		if(SendMail.sendMail(email, user))  System.out.println("Done");
-		
+		Map<String, String> env = System.getenv();
+		for (String s : env.keySet())
+		{
+			System.out.println(s + ": " + env.get(s));
+		}
 	}
-	
 }

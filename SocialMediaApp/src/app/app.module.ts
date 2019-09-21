@@ -15,6 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFriendComponent } from './search-friend/search-friend.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InvitationComponent } from './invitation/invitation.component';
 
@@ -30,7 +32,8 @@ import { InvitationComponent } from './invitation/invitation.component';
     UserProfileComponent,
     UserMenuComponent,    
     UpdateFormComponent,
-    SearchFriendComponent,    
+    SearchFriendComponent,
+    ChangepasswordComponent,        
     InvitationComponent
   ],
   imports: [

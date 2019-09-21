@@ -19,7 +19,6 @@ public class RegisterUserController
 	@PostMapping(value="/register")
 	public void registerUser(@RequestBody Users user)
 	{
-		Users testUser = user;
 		userRepo.insert(user);
 	}
 }
