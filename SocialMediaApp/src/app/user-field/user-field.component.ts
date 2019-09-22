@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppComponent } from '../app.component';
 import { SessionService } from '../session.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user-field',
@@ -13,6 +14,8 @@ export class UserFieldComponent implements OnInit {
   baseUrl: string = "http://localhost:9005/Project2Spring/api/"
 
   src: string = "../../assets/user.png"
+
+  user: User
 
   tData: string = '';
   likeCounter: number = 0;
@@ -57,6 +60,15 @@ export class UserFieldComponent implements OnInit {
     let signedUrl = await urlResponse.text();
 
     this.src = signedUrl
+  }
+
+  getUserInformation(username: string)
+  {
+    this._http.get(this.baseUrl + 'getLoggedInUser/' + username).subscribe(
+      (data: User) => {
+        this.user = data
+      }
+    )
   }
 
   likeCount() {
