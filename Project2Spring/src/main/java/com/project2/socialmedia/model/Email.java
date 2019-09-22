@@ -6,8 +6,7 @@ public class Email {
 	private String ePassword = "Personal_01";
 	private String eSubject = " , you reuqest ";
 	private String eMessage = "<h1>Change of password<h1> <br>You have requested to"
-			+ " change your password, please click the link to reset your"
-			+ " password, if you did not request this change, please"
+			+ " change your password, if you did not request this change, please"
 			+ " ignore this message or contact our customer support"
 			+ " for more help.<p>";
 	
@@ -34,7 +33,6 @@ public class Email {
 	}
 	public void seteMessage(String eMessage) {
 		this.eMessage = eMessage;
-	}	
-	
+	}		
 	
 }

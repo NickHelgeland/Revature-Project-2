@@ -9,12 +9,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project2.socialmedia.dao.UserDAO;
 import com.project2.socialmedia.model.Users;
 
+/**
+ * This class is a restful to get a single user
+ * @author frere
+ *
+ */
 @RestController
 public class GetLoggedInUserController 
 {	
 	@Autowired
 	UserDAO userRepo;
-	
+	/**
+	 * This method is an endpoint to find the user in the database and 
+	 * return the user
+	 * @param httpSession
+	 * @return
+	 */
 	@CrossOrigin
 	@GetMapping(value="/getLoggedInUser/{username}")
 	public Users getLoggedInUser(@PathVariable String username)
