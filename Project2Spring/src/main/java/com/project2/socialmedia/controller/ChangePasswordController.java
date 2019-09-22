@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project2.socialmedia.dao.UserDAO;
 import com.project2.socialmedia.model.Users;
+import com.project2.socialmedia.response.Credentials;
 import com.project2.socialmedia.response.UserChange;
 /**
  * This class is a restful API for PasswordReset  
- * @author frere
+ * @author Nick, Ilia, Danny and Fausto
  *
  */
 @RestController
@@ -28,11 +29,11 @@ public class ChangePasswordController {
 	 * @param httpSession
 	 */
 	@CrossOrigin(origins="http://localhost:4200")
-	@PostMapping("/PasswordReset")
-	public void resetPassword(@RequestBody UserChange requestUser, HttpSession httpSession) {
+	@PostMapping("/passwordReset")
+	public void resetPassword(@RequestBody Credentials requestUser, HttpSession httpSession) {
 		httpSession.setAttribute("user", requestUser);
-		Users user = userDao.selectOne(requestUser.getEmail());
-		user.setPassWord(requestUser.getEcryptP());
+		Users user = userDao.selectOne(requestUser.getUsername());
+		user.setPassWord(requestUser.getPassword());
 		userDao.update(user);
 	}
 }

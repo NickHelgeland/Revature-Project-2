@@ -16,7 +16,7 @@ import com.project2.socialmedia.response.UserChange;
 import com.project2.socialmedia.utiles.SendMail;
 /**
  * This class update the temporary password 
- * @author frere
+ * @author Nick, Ilia, Danny and Fausto
  *
  */
 @RestController

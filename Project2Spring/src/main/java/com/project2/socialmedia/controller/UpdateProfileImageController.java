@@ -10,6 +10,11 @@ import com.project2.socialmedia.dao.UserDAO;
 import com.project2.socialmedia.model.Users;
 import com.project2.socialmedia.response.Image;
 
+/**
+ * 
+ * @author Nick, Ilia, Danny and Fausto
+ *
+ */
 @RestController
 public class UpdateProfileImageController 
 {

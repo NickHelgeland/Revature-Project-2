@@ -11,7 +11,7 @@ import com.project2.socialmedia.model.Users;
 
 /**
  * This class is a restful to get a single user
- * @author frere
+ * @author Nick, Ilia, Danny and Fausto
  *
  */
 @RestController

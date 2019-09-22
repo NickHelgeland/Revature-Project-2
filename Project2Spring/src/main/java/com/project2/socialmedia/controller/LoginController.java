@@ -15,7 +15,7 @@ import com.project2.socialmedia.response.Credentials;
 import com.project2.socialmedia.response.Result;
 /**
  * This is a restful to login the app.
- * @author frere
+ * @author Nick, Ilia, Danny and Fausto
  *
  */
 @RestController
