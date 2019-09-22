@@ -1,49 +1,49 @@
 <header>
     <div class="container">
         <div class="header-data">
-            <div class="search-bar">
-                <form>
-                    <input type="text" name="search" placeholder="Search...">
-                    <button type="submit"><i class="la la-search"></i></button>
-                </form>
-            </div>
             <nav>
                 <ul>
                     <li>
-                        <a>
-                            <span><img src="../../assets/icon1.png" alt=""></span> Home
+                        <a routerLink="/user-field">
+                            <span><img src="../../assets/icon1.png"></span> Home
                         </a>
                     </li>
                     <li>
-                        <a>
-                            <span><img src="../../assets/icon4.png" alt=""></span> Profiles
+                        <a routerLink="/search-friend">
+                            <span><img src="../../assets/icon4.png"></span> Friends
+
                         </a>
                     </li>
                     <li>
-                        <a class="not-box-openm">
-                            <span><img src="../../assets/icon6.png" alt=""></span> Messages
+                        <a routerLink="/invitation">
+                            <span><img src="../../assets/icon7.png"></span> Invatation
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/changepassword">
+                            <span><img src="../../assets/icon6.png"></span> Change Password
                         </a>
                     </li>
                 </ul>
             </nav>
             <div class="user-info">
-                <a routerLink="/">Log Out</a>
+                <a routerLink="/" (click)="togglePage()">Log Out</a>
             </div>
         </div>
     </div>
 </header>
+
 <div class="main-user col-lg-3 col-md-4 pd-left-none no-pd">
     <div class="main-left-sidebar no-margin">
         <div class="user-profile">
             <div class="username-dt">
                 <div class="usr-pic">
-                    <img src="../../assets/user.png" alt="">
+                    <img src={{src}} id="profilePic">
                 </div>
             </div>
 
             <div class="user-specs">
                 <h3>John Doeh</h3>
-                <span> Online </span>
             </div>
         </div>
         <div class="user-fw-status">
@@ -58,6 +58,9 @@
             <div>
                 <a class="view_profile">View Profile</a>
             </div>
+            <div>
+                Upload File: <input type="file" id="fileUpload" (change)="uploadFile($event)">
+            </div>
         </div>
     </div>
 </div>
@@ -66,12 +69,11 @@
     <div class="post-bar">
         <div class="post_topbar">
             <div class="usy-dt">
-                <img src="images/resources/us-pic.png" alt="">
                 <div class="usy-name">
-                    <h3>John Doeh</h3>
+                    <h3>{{user.firstName}}</h3>
                 </div>
             </div>
-            <div class="ed-opts">
+            <!-- <div class="ed-opts">
                 <a class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
                 <ul class="ed-options">
                     <li><a>Edit Post</a></li>
@@ -80,7 +82,7 @@
                     <li><a>Close</a></li>
                     <li><a>Hide</a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
         <div class="epi-sec">
             <ul class="bk-links">
@@ -88,32 +90,26 @@
                 <li><a><i class="la la-envelope"></i></a></li>
             </ul>
         </div>
-        <div class="text_descp">
-            <p>All comments just put here plese ... <a> view more </a></p>
-        </div>
-        <div class="status-bar">
-            <a><i class="fas fa-heart"></i> 25 </a>
-            <a class="com"><i class="fas fa-comment-alt"></i> Comment 15 </a>
-            <a><i class="fas fa-eye"></i> Views 50 </a>
-        </div>
+        <ul>
+            <li>
+                <!-- *ngFor="let tD of tDatas"-->
+                <div *ngFor="let tD of tDatas" class="text_descp">
+                    <p> {{ tD }} </p>
+                </div>
+                <div class="status-bar">
+                    <!--*ngFor="let ln of likes"-->
+                    <a><i class="fas fa-heart" (click)="likeCount()"></i> {{ like }} </a>
+                </div>
+            </li>
+        </ul>
     </div>
+</div>
 
-    <div class="posty">
-        <div class="comment-section">
-            <a class="plus-ic">
-                <i class="la la-plus"></i>
-            </a>
-            <div class="post-comment">
-                <div class="cm_img">
-                    <img src="images/resources/bg-img4.png" alt="">
-                </div>
-                <div class="comment_box">
-                    <form>
-                        <input type="text" placeholder="Post a comment">
-                        <button type="submit">Send</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="posty">
+    <div class="comment_box">
+        <form class="row">
+            <input type="text" placeholder="Post a comment" [(ngModel)]="tData">
+            <a class="plus-ic" (click)="inputData()"><i class="la la-plus"></i></a>
+        </form>
     </div>
 </div>

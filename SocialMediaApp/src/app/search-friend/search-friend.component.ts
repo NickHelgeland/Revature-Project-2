@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-
+import { HttpClient } from '@angular/common/http';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-search-friend',
@@ -8,15 +8,16 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./search-friend.component.css']
 })
 export class SearchFriendComponent implements OnInit {
-
-  userSF:string='';
-
-  myresponse: any;
-  myresp: any;
-
+  
+  myresponse; myresp;
+  
   APP_URL = 'http://localhost:9005/Project2Spring/api/';
 
-  constructor(private _http: HttpClient) {
+  togglePage() {
+    this._toggle.toggleLogOut();
+  }
+
+  constructor(private _http: HttpClient, private _toggle: AppComponent) {
 
     this._http.get(this.APP_URL + 'getUsers').subscribe(
       data => {
@@ -27,23 +28,29 @@ export class SearchFriendComponent implements OnInit {
         console.log('Error occured', error);
       }
     )
-
-   }
-
-  ngOnInit() {
-   
   }
-
-  Search(){
-    if(this.userSF != ''){
-      this.myresponse = this.myresponse.filter(res => {
-        return res.firstName.toLocaleLowerCase .match(this.userSF.toLocaleLowerCase)
-      })
-    }else if(this.userSF == null){
-      this.myresponse = this.myresp;
+  
+  searchTable() {    
+    let input, filter, table, tr, td, tdl, i, txtValue, txtValuel;
+    input = document.querySelector("#myInput");
+    filter = input.value.toLowerCase();
+    table = document.querySelector("#myTable");
+    tr = table.querySelectorAll("tr");
+    
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].querySelectorAll("td")[0];
+        tdl = tr[i].querySelector("#tdl");
+        if (td || tdl) {
+            txtValue = td.textContent || td.innerText;
+            txtValuel = tdl.textContent || tdl.innerText;
+            if (txtValue.toLowerCase().indexOf(filter) > -1 || txtValuel.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        } 
     }
-
-   
   }
 
+  ngOnInit() { }
 }

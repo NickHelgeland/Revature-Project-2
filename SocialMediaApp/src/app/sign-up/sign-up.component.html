@@ -5,13 +5,13 @@
             <div class="row">
                 <div class="col-lg-12 no-pdd">
                     <div class="sn-field">
-                        <input type="text" name="firstname" placeholder="First Name" required autocomplete="off" [(ngModel)]="user.firstName">
+                        <input type="text" name="firstname" placeholder="First Name" required autocomplete="off" pattern="![A-Za-z] {3,}" [(ngModel)]="user.firstName">
                         <i class="la la-user"></i>
                     </div>
                 </div>
                 <div class="col-lg-12 no-pdd">
                     <div class="sn-field">
-                        <input type="text" name="lastname" placeholder="Last Name" required autocomplete="off" [(ngModel)]="user.lastName">
+                        <input type="text" name="lastname" placeholder="Last Name" required autocomplete="off" pattern="![A-Za-z] {3,}" [(ngModel)]="user.lastName">
                         <i class="la la-user"></i>
                     </div>
                 </div>
@@ -23,13 +23,13 @@
                 </div>
                 <div class="col-lg-12 no-pdd">
                     <div class="sn-field">
-                        <input type="text" name="email" placeholder="Email" required autocomplete="off" [(ngModel)]="user.email">
+                        <input type="email" name="email" placeholder="Email" required autocomplete="off" [(ngModel)]="user.email">
                         <i class="la la-user"></i>
                     </div>
                 </div>
                 <div class="col-lg-12 no-pdd">
                     <div class="sn-field">
-                        <input type="text" name="username" placeholder="Username" required autocomplete="off" [(ngModel)]="user.userName">
+                        <input type="text" name="username" placeholder="Username" required autocomplete="off" pattern="![^a-zA-Z0-9]" [(ngModel)]="user.userName">
                         <i class="la la-globe"></i>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12 no-pdd">
-                    <button type="submit" value="submit" id="button" (click)="register()">Get Started</button>
+                    <button type="submit" value="submit" id="button" (click)="register()" routerLink="/sign-in">Get Started</button>
                 </div>
             </div>
         </form>

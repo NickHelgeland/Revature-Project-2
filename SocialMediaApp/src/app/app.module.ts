@@ -11,15 +11,18 @@ import { HomeComponent } from './home/home.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
 import { UpdateFormComponent } from './components/update-form/update-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFriendComponent } from './search-friend/search-friend.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { InvitationComponent } from './invitation/invitation.component';
+import { RequestpasswordComponent } from './requestpassword/requestpassword.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,    
     SignUpComponent,
     SignInComponent,
     PassRecoveryComponent,
@@ -28,13 +31,16 @@ import { SearchFriendComponent } from './search-friend/search-friend.component';
     UserProfileComponent,
     UserMenuComponent,    
     UpdateFormComponent,
-    SearchFriendComponent
+    SearchFriendComponent,
+    ChangepasswordComponent,        
+    InvitationComponent, RequestpasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule    
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]

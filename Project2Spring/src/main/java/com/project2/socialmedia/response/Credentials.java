@@ -1,5 +1,10 @@
 package com.project2.socialmedia.response;
 
+/**
+ * This class is a bypass to get information from end to back end.
+ * @author Nick, Ilia, Danny and Fausto.
+ *
+ */
 public class Credentials
 {
 	private String username;
@@ -9,8 +14,7 @@ public class Credentials
 	public Credentials() {}
 
 	public Credentials(String username, String password)
-	{
-		super();
+	{		
 		this.username = username;
 		this.password = password;
 	}

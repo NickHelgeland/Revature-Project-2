@@ -4,6 +4,7 @@ import { RoutingService } from '../routing.service';
 import { HttpClient } from '@angular/common/http';
 import { Result } from '../result';
 import { EncryptService } from '../encrypt.service';
+import { SessionService } from '../session.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -19,7 +20,8 @@ export class SignInComponent implements OnInit {
       password : ""
   }
 
-  constructor(private routingService: RoutingService, private http: HttpClient, private _encryptor: EncryptService) { } 
+  constructor(private routingService: RoutingService, private http: HttpClient, private _encryptor: EncryptService, 
+    private _session: SessionService) { } 
   
   login()
   {
@@ -28,7 +30,8 @@ export class SignInComponent implements OnInit {
       (data: Result) => {
         if (data.result == "success")
         {
-          this.routingService.emitChange('update-form')
+          this._session.setUsername(this.credentials.username)
+          this.routingService.emitChange('user-field')
         }
       },
       error => {
