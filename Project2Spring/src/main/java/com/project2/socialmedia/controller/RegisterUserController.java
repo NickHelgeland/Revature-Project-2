@@ -10,7 +10,7 @@ import com.project2.socialmedia.dao.Insert;
 import com.project2.socialmedia.model.Users;
 /**
  * This class is a restful to enroll a user.
- * @author Nick, Ilia, Danny and Fausto
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 @RestController

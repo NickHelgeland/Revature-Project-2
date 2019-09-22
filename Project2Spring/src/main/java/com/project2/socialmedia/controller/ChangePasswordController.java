@@ -13,8 +13,8 @@ import com.project2.socialmedia.model.Users;
 import com.project2.socialmedia.response.Credentials;
 import com.project2.socialmedia.response.UserChange;
 /**
- * This class is a restful API for PasswordReset  
- * @author Nick, Ilia, Danny and Fausto
+ * This class is a restful API for PasswordReset.
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 @RestController

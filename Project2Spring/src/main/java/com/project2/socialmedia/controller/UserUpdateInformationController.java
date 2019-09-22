@@ -12,7 +12,7 @@ import com.project2.socialmedia.dao.UserDAO;
 import com.project2.socialmedia.model.Users;
 /**
  * this class is a restful to update information to the user.
- * @author frere
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 @RestController
