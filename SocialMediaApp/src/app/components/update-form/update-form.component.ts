@@ -12,6 +12,7 @@ import { User } from '../../user';
 export class UpdateFormComponent implements OnInit {
   myresponse: any;
   profileDataInput = {
+    username : this._session.username,
     firstName: "",
     lastName: "",
     email: "",
