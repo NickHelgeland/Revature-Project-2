@@ -730,26 +730,42 @@ nav ul li span img {
 
 .posts-section {
     float: left;
+    position: relative;
     margin-top: 20px;
     margin-left: 50px;
     width: 940px;
-    height: 640px;
+    height: 740px;
     text-align: center;
     border: 2px solid #119987;
+    /* border-right: 2px solid #119987;
+    border-left: 2px solid #119987; */
     border-radius: 5px;
-    overflow: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
-.post-bar {
+.posts-section-int {
+    width: 940px;
+    height: 640px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.comment_box input {
+    margin-top: 5px;
+    margin-left: 25px;
     float: left;
-    width: 100%;
-    background-color: #fff;
-    border-left: 1px solid #e4e4e4;
-    border-right: 1px solid #e4e4e4;
-    border-bottom: 1px solid #e4e4e4;
-    margin-bottom: 20px;
-    padding: 20px;
-    box-shadow: 0px 2px #e4e4e4;
+    width: 920px;
+    height: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background-color: #efefef;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 40px;
 }
 
 .post_topbar {
@@ -883,11 +899,6 @@ nav ul li span img {
     margin-right: 7px;
 }
 
-
-/* .bk-links li:last-child {
-    margin-right: 0;
-} */
-
 .bk-links li i {
     color: #fff;
     font-size: 24px;
@@ -950,21 +961,6 @@ nav ul li span img {
     background-color: #fff;
     padding: 20px;
     box-shadow: 0px 3px #e4e4e4;
-}
-
-.comment_box input {
-    margin-top: 5px;
-    margin-left: 25px;
-    float: left;
-    width: 920px;
-    height: 30px;
-    border: 1px solid #e5e5e5;
-    border-radius: 5px;
-    background-color: #efefef;
-    color: #000000;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 40px;
 }
 
 .plus-ic {

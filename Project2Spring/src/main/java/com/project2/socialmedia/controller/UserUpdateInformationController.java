@@ -28,8 +28,7 @@ public class UserUpdateInformationController {
 	 */
 	@CrossOrigin(origins="http://localhost:4200")
 	@PostMapping("/updateUser")
-	public void  updateUser(@RequestBody Users user, HttpSession session) {
-		session.setAttribute("username", user);
+	public void  updateUser(@RequestBody Users user) {
 		userDao.update(user);
 	}
 }

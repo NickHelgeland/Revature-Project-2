@@ -1,32 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { SessionService } from 'src/app/session.service';
 
 @Component({
   selector: 'app-update-form',
   templateUrl: './update-form.component.html',
   styleUrls: ['./update-form.component.css']
 })
-// export class UpdateFormComponent implements OnInit {
-  export class UpdateFormComponent {
+export class UpdateFormComponent implements OnInit {
   myresponse: any;
+  profileDataInput = {
+    firstName: "",
+    lastName: "",
+    email:"",
+    address:""
+  }
 
   APP_URL = 'http://localhost:9005/Project2Spring/api';
-
-  // public sm = {
-    //data from database can either be set here in the empty quotes
-    //or we can use the data returned and loop thru it as a for loop
-    // firstname: "insert database name here"
-  // }
   
-  // constructor() { }
+  constructor(private _http: HttpClient, private _session: SessionService) {}
 
-  // ngOnInit() {
-  // }
-
-  constructor(private _http: HttpClient) {}
-
-  getAllEmployees() {
-    this._http.get(this.APP_URL + '/getUsers').subscribe(
+  ngOnInit() {
+    this._http.get(this.APP_URL + '/getLoggedInUser/' + this._session.username).subscribe(
       data => {
         this.myresponse = data;
       },
@@ -34,6 +29,15 @@ import {HttpClient} from '@angular/common/http';
         console.log('Error occured', error);
       }
     )
+  }
+
+  updateProfile(){
+    this.profileDataInput.firstName=this.myresponse.firstName;
+    this.profileDataInput.lastName=this.myresponse.lastName;
+    this.profileDataInput.email=this.myresponse.email;
+    this.profileDataInput.address=this.myresponse.address;
+
+    this._http.post("http://localhost:9005/Project2Spring/api/updateUser", this.profileDataInput).subscribe()
   }
 
 }
