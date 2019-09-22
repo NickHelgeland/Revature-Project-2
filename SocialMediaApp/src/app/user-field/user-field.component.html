@@ -59,7 +59,7 @@
                 Upload Profile Picture: <input type="file" id="fileUpload" (change)="uploadFile($event)">
             </div>
             <div id="update-button">
-                <button>Update Profile</button>
+                <button routerLink="/update-form">Update Profile</button>
             </div>
         </div>
     </div>
@@ -73,6 +73,12 @@
             <li><a><i class="la la-envelope"></i></a></li>
         </ul>
     </div>
+    <div class="comment_box">
+        <form class="row">
+            <input type="text" placeholder="Post a comment" [(ngModel)]="tData" [ngModelOptions]="{standalone: true}" />
+            <a class="plus-ic" (click)="inputData()"><i class="la la-plus"></i></a>
+        </form>
+    </div>
     <div class="posts-section-int">
         <ul>
             <li *ngFor="let tData of tDatas">
@@ -81,17 +87,10 @@
                     <p> {{ tData }} </p>
                 </div>
                 <div class="status-bar">
-                    <!--*ngFor="let like of likes"-->
                     <a><i class="fas fa-heart" (click)="likeCount()"></i> {{ like }} </a>
                 </div>
             </li>
         </ul>
-        <div class="comment_box">
-            <form class="row">
-                <input type="text" placeholder="Post a comment" [(ngModel)]="tData">
-                <a class="plus-ic" (click)="inputData()"><i class="la la-plus"></i></a>
-            </form>
-        </div>
     </div>
 </div>
 

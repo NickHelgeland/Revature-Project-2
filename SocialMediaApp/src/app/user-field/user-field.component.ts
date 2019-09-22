@@ -9,7 +9,12 @@ import { User } from '../user';
   templateUrl: './user-field.component.html',
   styleUrls: ['./user-field.component.css']
 })
-export class UserFieldComponent implements OnInit { 
+export class UserFieldComponent implements OnInit {
+
+  tData: string;
+  tDatas: Array<string> = [];
+  like: number = 0;
+  likes: Array<number> = [];
 
   baseUrl: string = "http://localhost:9005/Project2Spring/api/"
 
@@ -17,29 +22,19 @@ export class UserFieldComponent implements OnInit {
 
   user: User
 
-  tData: string = '';
-  tDatas: Array<string> = [];
-  like: number = 0;
-  likes: Array<number> = [];
-
-  likeCount() {       
+  likeCount() {
     this.like += 1;
-    this.likes.push(this.like);
-    // if (this.like) {
-    //   this.like += 1;
-    //   this.likes.push(this.like);
-    // }
+    this.likes.push(this.like);    
   }
 
-  inputData() {      
-    this.tDatas.push(this.tData);  
-    // if (this.tData != '' || this.tData != null) {      
-    //   this.tDatas.push(this.tData);
-    // }          
+  inputData() {
+    if (this.tData !== '' && this.tData !== null) {
+      this.tDatas.push(this.tData);
+      this.tData = '';
+    }
   }
 
-  async uploadFile(event)
-  {
+  async uploadFile(event) {
     let file = event.target.files[0]
     let urlResponse = await fetch(this.baseUrl + 's3/' + file.name, {
       method: 'PUT'
@@ -54,44 +49,40 @@ export class UserFieldComponent implements OnInit {
     this.getFile()
   }
 
-  updateProfilePicture(filename: string)
-  {
+  updateProfilePicture(filename: string) {
     let image = {
-      name : filename,
-      username : this._session.getUsername()
+      name: filename,
+      username: this._session.getUsername()
     }
 
     this._http.post(this.baseUrl + 'updateImage', image).subscribe()
     alert("Image has been uploaded")
   }
 
-  async getFile()
-  {
+  async getFile() {
     let getImageRespone = await fetch(this.baseUrl + 'getProfilePic/' + this._session.username, {
-        method: 'GET'
+      method: 'GET'
     })
     let imageName = await getImageRespone.text()
 
     let urlResponse = await fetch(this.baseUrl + 's3/' + imageName, {
-    method: 'GET'
+      method: 'GET'
     });
     let signedUrl = await urlResponse.text();
 
     this.src = signedUrl
   }
 
-  getUserInformation(username: string)
-  {
+  getUserInformation(username: string) {
     this._http.get(this.baseUrl + 'getLoggedInUser/' + username).subscribe(
       (data: User) => {
         this.user = data
       }
     )
-  }  
-  
-  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) 
-  { 
-    this.getFile() 
+  }
+
+  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) {
+    this.getFile()
     this.getUserInformation(this._session.username)
   }
 
