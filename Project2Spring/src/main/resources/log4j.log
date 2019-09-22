@@ -171,3 +171,24 @@ Caused by: java.net.SocketTimeoutException: connect timed out
 2019-09-20 15:08:02 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
 2019-09-20 15:15:33 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
 2019-09-20 15:15:34 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:22:14 INFO  Version:45 - HHH000412: Hibernate Core {5.2.17.Final}
+2019-09-21 19:22:14 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-09-21 19:22:14 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-21 19:22:15 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-09-21 19:26:10 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-09-21 19:26:11 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:37:54 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:40:49 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:45:33 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:46:10 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:48:15 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:48:41 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:53:54 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:53:57 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:53:57 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:53:58 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:54:01 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:54:01 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:54:02 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:54:02 INFO  LoggingAspect:18 - A user has logged in.
+2019-09-21 19:54:06 INFO  LoggingAspect:18 - A user has logged in.

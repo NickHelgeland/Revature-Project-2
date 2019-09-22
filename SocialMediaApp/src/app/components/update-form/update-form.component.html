@@ -1,55 +1,32 @@
+<div *ngIf="myresponse">
 
-
-<!-- <div id="fetchbtn">
-        <div class="text-center">
-    <button type="button" class="btn btn-outline-primary" (click)="getAllEmployees()">Click To See Available Movies and Show Times</button>
+  <h1>Update Your Profile</h1>
+  <div class="form-group">
+  <div id="updatebtn1">
+      <b>First name:</b>
+      <input type="text" placeholder="Enter New First Name" [(ngModel)] = "myresponse.firstName" name="first"/>
+    </div>
   </div>
-    </div>
-    <br> -->
-    <div class="card">
-    <div *ngIf="myresponse">
-      <table class="table table-bordered table-hover">
-        <thead>
-          <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Address</th>
-        </thead>
-        <tbody>
-          <!-- <tr *ngFor="let Movie of myresponse"> -->
-            <tr>
-            <td>{{myresponse.firstname}}</td>          
-            <td>{{myresponse.movieName}}</td>
-            <td>{{myresponse.movieRating}}</td>
-            <td>{{myresponse.showTimes}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
-    <div class="text-center">
-    <h1>Update Your Profile</h1>
-    <div id="updatebtn1">
-            <input type="text" [(ngModel)] = "myresponse.userName" placeholder="Enter New First Name"/>
-    <!-- <button type="button" class="btn btn-outline-primary" (click)="UpdateProfile()">Update</button> -->
-    </div>
-    <br>
+    <br>        
+    <div class="form-group">
     <div id="updatebtn2">
-        <input type="text" [(ngModel)] = "lastNameUpdateInput" placeholder="Enter New Last Name"/>
-  <!-- <button type="button" class="btn btn-outline-primary" (click)="UpdateProfile()">Update</button> -->
-  </div>
-  <br>
-  <div id="updatebtn3">
-      <input type="text" [(ngModel)] = "emailUpdateInput" placeholder="Enter New Email"/>
-  <!-- <button type="button" class="btn btn-outline-primary" (click)="UpdateProfile()">Update</button> -->
-  </div>
-  <br>
-  <div id="updatebtn4">
-      <input type="text" [(ngModel)] = "addressUpdateInput" placeholder="Enter New Address"/>
-  
-  </div>
-  <br>
-  <button type="button" class="btn btn-outline-primary" (click)="UpdateProfile()">Update</button>
-  <br>
-  <br>
-</div>
+        <b>Last name:</b>
+        <input type="text" [(ngModel)] = "myresponse.lastName" placeholder="Enter New Last Name" />
+      </div>
+    </div>
+      <br>
+      <div class="form-group">
+      <div id="updatebtn3">
+          <b>Email: </b>
+          <input type="text" [(ngModel)] = "myresponse.email" placeholder="Enter New Email"/>
+        </div>
+      </div>
+        <br>
+        <div class="form-group">
+        <div id="updatebtn4">
+            <b>Address: </b>
+            <input type="text" [(ngModel)] = "myresponse.address" placeholder="Enter New Address"/>      
+          </div>
+          <button type="button" class="btn btn-outline-primary" (click)="updateProfile()">Update</button>
+          </div>
+        </div>
