@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { SessionService } from '../session.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-changepassword',
@@ -11,6 +12,10 @@ import { SessionService } from '../session.service';
   styleUrls: ['./changepassword.component.css']
 })
 export class ChangepasswordComponent implements OnInit { 
+
+  baseUrl: string = "http://localhost:9005/Project2Spring/api/"
+  src: string = "../../assets/user.png"
+  user: User
 
   password: string;
   cpassword: string;
@@ -20,12 +25,54 @@ export class ChangepasswordComponent implements OnInit {
     password : ""
   }
 
+  async uploadFile(event)
+  {
+    let file = event.target.files[0]
+    let urlResponse = await fetch(this.baseUrl + 's3/' + file.name, {
+      method: 'PUT'
+    })
+    let signedUrl = await urlResponse.text()
+
+    let s3Response = await fetch(signedUrl, {
+      method: 'PUT',
+      body: file
+    })
+    this.updateProfilePicture(file.name)
+    this.getFile()
+  }
+
+  updateProfilePicture(filename: string)
+  {
+    let image = {
+      name : filename,
+      username : this._session.getUsername()
+    }
+
+    this._http.post(this.baseUrl + 'updateImage', image).subscribe()
+    alert("Image has been uploaded")
+  }
+
+  async getFile()
+  {
+    let getImageRespone = await fetch(this.baseUrl + 'getProfilePic/' + this._session.username, {
+        method: 'GET'
+    })
+    let imageName = await getImageRespone.text()
+
+    let urlResponse = await fetch(this.baseUrl + 's3/' + imageName, {
+    method: 'GET'
+    });
+    let signedUrl = await urlResponse.text();
+
+    this.src = signedUrl
+  }
+
   togglePage() {
     this._toggle.toggleLogOut();
   }
 
   constructor(private _http: HttpClient, private _router: Router, private _encryptor: EncryptService, 
-    private _toggle: AppComponent, private _session: SessionService) { }
+    private _toggle: AppComponent, private _session: SessionService) { this.getFile() }
 
   ngOnInit() {
   }

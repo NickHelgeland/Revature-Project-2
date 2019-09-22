@@ -22,6 +22,22 @@ export class UserFieldComponent implements OnInit {
   like: number = 0;
   likes: Array<number> = [];
 
+  likeCount() {       
+    this.like += 1;
+    this.likes.push(this.like);
+    // if (this.like) {
+    //   this.like += 1;
+    //   this.likes.push(this.like);
+    // }
+  }
+
+  inputData() {      
+    this.tDatas.push(this.tData);  
+    // if (this.tData != '' || this.tData != null) {      
+    //   this.tDatas.push(this.tData);
+    // }          
+  }
+
   async uploadFile(event)
   {
     let file = event.target.files[0]
@@ -62,21 +78,7 @@ export class UserFieldComponent implements OnInit {
     let signedUrl = await urlResponse.text();
 
     this.src = signedUrl
-  }
-
-  likeCount() {       
-    this.like += 1;
-    // if (this.like) {
-    //   this.like += 1;
-    //   this.likes.push(this.like);
-    // }
-  }
-
-  inputData() {        
-    if (this.tData != '' || this.tData != null) {      
-      this.tDatas.push(this.tData);
-    }          
-  }
+  }  
   
   constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { this.getFile() }
 
