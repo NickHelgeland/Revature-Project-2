@@ -30,8 +30,7 @@ public class ChangePasswordController {
 	 */
 	@CrossOrigin(origins="http://localhost:4200")
 	@PostMapping("/passwordReset")
-	public void resetPassword(@RequestBody Credentials requestUser, HttpSession httpSession) {
-		httpSession.setAttribute("user", requestUser);
+	public void resetPassword(@RequestBody Credentials requestUser) {
 		Users user = userDao.selectOne(requestUser.getUsername());
 		user.setPassWord(requestUser.getPassword());
 		userDao.update(user);

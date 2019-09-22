@@ -18,7 +18,9 @@ export class UserFieldComponent implements OnInit {
   user: User
 
   tData: string = '';
-  likeCounter: number = 0;
+  tDatas: Array<string> = [];
+  like: number = 0;
+  likes: Array<number> = [];
 
   async uploadFile(event)
   {
@@ -62,26 +64,25 @@ export class UserFieldComponent implements OnInit {
     this.src = signedUrl
   }
 
-  getUserInformation(username: string)
-  {
-    this._http.get(this.baseUrl + 'getLoggedInUser/' + username).subscribe(
-      (data: User) => {
-        this.user = data
-      }
-    )
+  likeCount() {       
+    this.like += 1;
+    // if (this.like) {
+    //   this.like += 1;
+    //   this.likes.push(this.like);
+    // }
   }
 
-  likeCount() {
-    this.likeCounter += 1;
-  }
-
-  inputData() {
-    this.tData = this.tData;
+  inputData() {        
+    if (this.tData != '' || this.tData != null) {      
+      this.tDatas.push(this.tData);
+    }          
   }
   
-  constructor(private _http: HttpClient, private _session: SessionService) { this.getFile() }
+  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { this.getFile() }
 
-  
-  
-  ngOnInit() { }  
+  togglePage() {
+    this._toggle.toggleLogOut();
+  }
+
+  ngOnInit() { }
 }

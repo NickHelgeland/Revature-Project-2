@@ -73,7 +73,7 @@
                     <h3>{{user.firstName}}</h3>
                 </div>
             </div>
-            <div class="ed-opts">
+            <!-- <div class="ed-opts">
                 <a class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
                 <ul class="ed-options">
                     <li><a>Edit Post</a></li>
@@ -82,7 +82,7 @@
                     <li><a>Close</a></li>
                     <li><a>Hide</a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
         <div class="epi-sec">
             <ul class="bk-links">
@@ -90,29 +90,26 @@
                 <li><a><i class="la la-envelope"></i></a></li>
             </ul>
         </div>
-        <div class="text_descp">
-            <p>{{ tData }}<a> view more </a></p>
-        </div>
-        <div class="status-bar">
-            <a><i class="fas fa-heart" (click)="likeCount()"></i>{{ likeCounter }}</a>
-            <a class="com"><i class="fas fa-comment-alt"></i> Comment 15 </a>
-            <a><i class="fas fa-eye"></i> Views 50 </a>
-        </div>
-    </div>
-
-    <div class="posty">
-        <div class="comment-section">
-            <a class="plus-ic">
-                <i class="la la-plus"></i>
-            </a>
-            <div class="post-comment">
-                <div class="comment_box">
-                    <form>
-                        <input type="text" placeholder="Post a comment" [(ngModel)]="tData" (input)="inputData()">
-                        <button type="submit">Send</button>
-                    </form>
+        <ul>
+            <li>
+                <!-- *ngFor="let tD of tDatas"-->
+                <div *ngFor="let tD of tDatas" class="text_descp">
+                    <p> {{ tD }} </p>
                 </div>
-            </div>
-        </div>
+                <div class="status-bar">
+                    <!--*ngFor="let ln of likes"-->
+                    <a><i class="fas fa-heart" (click)="likeCount()"></i> {{ like }} </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="posty">
+    <div class="comment_box">
+        <form class="row">
+            <input type="text" placeholder="Post a comment" [(ngModel)]="tData">
+            <a class="plus-ic" (click)="inputData()"><i class="la la-plus"></i></a>
+        </form>
     </div>
 </div>
