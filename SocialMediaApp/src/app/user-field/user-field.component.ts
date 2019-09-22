@@ -49,6 +49,21 @@ export class UserFieldComponent implements OnInit {
     alert("Image has been uploaded")
   }
 
+  async getFile()
+  {
+    let getImageRespone = await fetch(this.baseUrl + 'getProfilePic/' + this._session.username, {
+        method: 'GET'
+    })
+    let imageName = await getImageRespone.text()
+
+    let urlResponse = await fetch(this.baseUrl + 's3/' + imageName, {
+    method: 'GET'
+    });
+    let signedUrl = await urlResponse.text();
+
+    this.src = signedUrl
+  }
+
   likeCount() {       
     this.like += 1;
     // if (this.like) {
@@ -63,13 +78,11 @@ export class UserFieldComponent implements OnInit {
     }          
   }
   
-  constructor(private _http: HttpClient, private _session: SessionService) { this.getFile() }
+  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { this.getFile() }
 
   togglePage() {
     this._toggle.toggleLogOut();
   }
-
-  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { }
 
   ngOnInit() { }
 }
