@@ -718,6 +718,17 @@ nav ul li span img {
     width: 100%;
 }
 
+#pic-upload {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#update-button {
+    float: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
 
 /* .change_pass {
     float: center;

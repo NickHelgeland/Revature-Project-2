@@ -55,8 +55,11 @@
                 <p>Address</p>
                 <span>{{user.address}}</span>
             </div>
-            <div>
+            <div id="pic-upload">
                 Upload Profile Picture: <input type="file" id="fileUpload" (change)="uploadFile($event)">
+            </div>
+            <div id="update-button">
+                <button>Update Profile</button>
             </div>
         </div>
     </div>
