@@ -64,6 +64,15 @@ export class UserFieldComponent implements OnInit {
     this.src = signedUrl
   }
 
+  getUserInformation(username: string)
+  {
+    this._http.get(this.baseUrl + 'getLoggedInUser/' + username).subscribe(
+      (data: User) => {
+        this.user = data
+      }
+    )
+  }
+
   likeCount() {       
     this.like += 1;
     // if (this.like) {
@@ -78,7 +87,11 @@ export class UserFieldComponent implements OnInit {
     }          
   }
   
-  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { this.getFile() }
+  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) 
+  { 
+    this.getFile() 
+    this.getUserInformation(this._session.username)
+  }
 
   togglePage() {
     this._toggle.toggleLogOut();
