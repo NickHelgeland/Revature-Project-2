@@ -14,10 +14,20 @@ import com.project2.socialmedia.model.Email;
 import com.project2.socialmedia.model.Users;
 
 import javax.mail.PasswordAuthentication;
-
+/**
+ * this class send the email
+ * @author frer
+ *
+ */
 public class SendMail {	
 	
-		
+	/**
+	 * This method gets the parameters (email, user) and execute to send email,
+	 * return true if it is successful and false it is not.
+	 * @param email
+	 * @param user
+	 * @return
+	 */
 	public static boolean sendMail(Email email, Users user) {
 				
 		String fromEmail = email.geteFromEmail();

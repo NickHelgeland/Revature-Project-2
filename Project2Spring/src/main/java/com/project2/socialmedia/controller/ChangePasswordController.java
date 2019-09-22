@@ -10,26 +10,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project2.socialmedia.dao.UserDAO;
 import com.project2.socialmedia.model.Users;
+import com.project2.socialmedia.response.UserChange;
 /**
- * this class is a restful to update information to the user.
+ * This class is a restful API for PasswordReset  
  * @author frere
  *
  */
 @RestController
-public class UserUpdateInformationController {
-
+public class ChangePasswordController {
+	
 	@Autowired
 	UserDAO userDao;
 	/**
-	 * This method is an endpoint to retrieve information about the user and
-	 * update it, use the parameters user and session.
-	 * @param user
-	 * @param session
+	 * This method is an endpoint to get information the user to change the
+	 * password. it has the parameters requestUser, httpSession
+	 * @param requestUser
+	 * @param httpSession
 	 */
 	@CrossOrigin(origins="http://localhost:4200")
-	@PostMapping("/updateUser")
-	public void  updateUser(@RequestBody Users user, HttpSession session) {
-		session.setAttribute("username", user);
+	@PostMapping("/PasswordReset")
+	public void resetPassword(@RequestBody UserChange requestUser, HttpSession httpSession) {
+		httpSession.setAttribute("user", requestUser);
+		Users user = userDao.selectOne(requestUser.getEmail());
+		user.setPassWord(requestUser.getEcryptP());
 		userDao.update(user);
 	}
 }
