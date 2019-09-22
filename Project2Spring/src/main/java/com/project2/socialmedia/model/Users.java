@@ -7,7 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+/**
+ * This class provide User and, the mapping with the database and also generate
+ * the schema for the database
+ * @author frere
+ *
+ */
 @Entity
 @Table(name="UserSM")
 public class Users {
