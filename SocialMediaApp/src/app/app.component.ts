@@ -8,24 +8,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  newUser= {
+  newUser = {
     username: '',
     password: ''
   }
-  isOn: Boolean = true;  
+  isOn: Boolean = true;
 
-  constructor(private routingService: RoutingService, private router: Router) 
-  {  
-      routingService.changeEmitted$.subscribe(
-        text => {
-            this.isOn = false
-            this.router.navigate([text])
-        }
-      )
-  }  
+  constructor(private routingService: RoutingService, private router: Router) {
+    routingService.changeEmitted$.subscribe(
+      text => {
+        this.isOn = false
+        this.router.navigate([text])
+      }
+    )
+  }
 
-  title = 'SocialMediaApp';  
+  toggleLogOut() {
+    if (!this.isOn) this.isOn = true;
+  }
 
-
-  
+  title = 'SocialMediaApp';
 }

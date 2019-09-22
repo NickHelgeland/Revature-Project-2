@@ -20,7 +20,6 @@ public class UpdateProfileImageController
 	@PostMapping(value = "/updateImage")
 	public void updateImage(@RequestBody Image image)
 	{
-		
 		Users user = userRepo.selectOne(image.getUsername());
 		user.setImageName(image.getName());
 		

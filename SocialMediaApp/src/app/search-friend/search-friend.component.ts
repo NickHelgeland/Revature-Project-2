@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-search-friend',
@@ -12,7 +13,11 @@ export class SearchFriendComponent implements OnInit {
   
   APP_URL = 'http://localhost:9005/Project2Spring/api/';
 
-  constructor(private _http: HttpClient) {
+  togglePage() {
+    this._toggle.toggleLogOut();
+  }
+
+  constructor(private _http: HttpClient, private _toggle: AppComponent) {
 
     this._http.get(this.APP_URL + 'getUsers').subscribe(
       data => {

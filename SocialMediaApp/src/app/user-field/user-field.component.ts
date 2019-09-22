@@ -12,6 +12,8 @@ export class UserFieldComponent implements OnInit {
 
   baseUrl: string = "http://localhost:9005/Project2Spring/api/"
 
+  src: string = "../../assets/user.png"
+
   tData: string = '';
   likeCounter: number = 0;
 
@@ -28,6 +30,7 @@ export class UserFieldComponent implements OnInit {
       body: file
     })
     this.updateProfilePicture(file.name)
+    this.getFile()
   }
 
   updateProfilePicture(filename: string)
@@ -41,6 +44,21 @@ export class UserFieldComponent implements OnInit {
     alert("Image has been uploaded")
   }
 
+  async getFile()
+  {
+    let getImageRespone = await fetch(this.baseUrl + 'getProfilePic/' + this._session.username, {
+        method: 'GET'
+    })
+    let imageName = await getImageRespone.text()
+
+    let urlResponse = await fetch(this.baseUrl + 's3/' + imageName, {
+    method: 'GET'
+    });
+    let signedUrl = await urlResponse.text();
+
+    this.src = signedUrl
+  }
+
   likeCount() {
     this.likeCounter += 1;
   }
@@ -49,7 +67,7 @@ export class UserFieldComponent implements OnInit {
     this.tData = this.tData;
   }
   
-  constructor(private _http: HttpClient, private _session: SessionService) { }
+  constructor(private _http: HttpClient, private _session: SessionService) { this.getFile() }
 
   
   
