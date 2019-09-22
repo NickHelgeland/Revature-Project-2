@@ -1,9 +1,15 @@
-.filterSort {
+.table-view-sec {
     float: left;
     position: relative;
     margin-top: 20px;
-    margin-left: 35%;
-    margin-bottom: 20px;
+    margin-left: 2%;
+}
+
+.filterSort {
+    float: left;
+    position: relative;
+    /* margin-top: 20px;
+    margin-left: 2%; */
     height: 32px;
     width: 190px;
     font-size: 16px;
@@ -14,9 +20,8 @@
 .table-view {
     float: left;
     position: relative;
-    /* margin-top: 5px; */
-    margin-left: 35%;
-    /* margin-left: 400px; */
+    margin-top: 10px;
+    margin-left: .2%;
     background: #fff;
     height: 600px;
     width: 640px;
@@ -46,10 +51,10 @@ th {
     float: left;
     position: relative;
     margin-top: 20px;
-    margin-left: 35%;
+    margin-left: 2%;
     background: #fff;
     height: 600px;
-    width: 640px;
+    width: 660px;
     text-align: center;
     font-size: 16px;
     border: 1px solid #119987;
@@ -58,8 +63,10 @@ th {
     overflow: auto;
 }
 
-#invite {
-    width: 10px;
+.invite {
+    float: left;
+    width: 75px;
+    margin-left: 80px;
 }
 
 #button1 {
@@ -68,7 +75,7 @@ th {
     width: 29px;
     display: flex;
     border-radius: 5px;
-    margin-left: 15px;
+    margin-left: 5px;
     cursor: pointer;
 }
 
@@ -78,6 +85,6 @@ th {
     width: 29px;
     display: flex;
     border-radius: 5px;
-    margin-left: 15px;
+    margin-left: 5px;
     cursor: pointer;
 }

@@ -20,18 +20,19 @@
                         </a>
                     </li>
                     <li>
-                        <a>
-                            <span><img src="../../assets/icon6.png"></span> Messages
+                        <a routerLink="/changepassword">
+                            <span><img src="../../assets/icon6.png"></span> Change Password
                         </a>
                     </li>
                 </ul>
             </nav>
             <div class="user-info">
-                <a routerLink="/">Log Out</a>
+                <a routerLink="/" (click)="togglePage()">Log Out</a>
             </div>
         </div>
     </div>
 </header>
+
 <div class="main-user col-lg-3 col-md-4 pd-left-none no-pd">
     <div class="main-left-sidebar no-margin">
         <div class="user-profile">
@@ -59,7 +60,6 @@
                 <a class="view_profile">View Profile</a>
             </div>
             <div>
-                <!-- <button type="button" class="btn btn-primary" id="upload">Upload</button> -->
                 Upload File: <input type="file" id="fileUpload" (change)="uploadFile($event)">
             </div>
         </div>

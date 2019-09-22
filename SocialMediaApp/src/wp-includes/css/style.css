@@ -199,7 +199,7 @@ a:hover {
     font-weight: 600;
     position: relative;
     padding-bottom: 10px;
-    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .sign_in_sec h3:before {
@@ -719,6 +719,13 @@ nav ul li span img {
 }
 
 
+/* .change_pass {
+    float: center;
+    font-size: 18px;
+    margin-top: 10px;
+} */
+
+
 /********** post field ********/
 
 .posts-section {
@@ -1131,4 +1138,68 @@ nav ul li span img {
     display: inline-block;
     padding-top: 16px;
     padding-left: 20px;
+}
+
+
+/* ============ Password Change =============*/
+
+.change_pass_sec {
+    float: left;
+    margin-top: 20px;
+    margin-left: 50px;
+    width: 540px;
+    height: 440px;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    border: 2px solid #119987;
+    border-radius: 5px;
+}
+
+.change_pass_sec h3 {
+    color: #951223;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    margin-top: 60px;
+}
+
+.pass_sec {
+    float: center;
+    text-align: center;
+    margin-left: 115px;
+    position: relative;
+}
+
+#button_change_pass {
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #951223;
+    color: #fff;
+}
+
+.sn-field2 {
+    float: left;
+    width: 280px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.sn-field2 input {
+    padding-left: 30px;
+}
+
+.sn-field2>i {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    color: #666666;
+    font-size: 18px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
