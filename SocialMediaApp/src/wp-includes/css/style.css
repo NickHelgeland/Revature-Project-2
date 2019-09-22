@@ -764,6 +764,10 @@ nav ul li span img {
     overflow-x: hidden;
 }
 
+.comment_box {
+    position: blocked;
+}
+
 .comment_box input {
     margin-top: 5px;
     margin-left: 25px;
