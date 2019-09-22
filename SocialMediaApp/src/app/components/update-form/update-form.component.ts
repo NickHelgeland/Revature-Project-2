@@ -10,6 +10,7 @@ import { SessionService } from 'src/app/session.service';
 export class UpdateFormComponent implements OnInit {
   myresponse: any;
   profileDataInput = {
+    username : this._session.username,
     firstName: "",
     lastName: "",
     email:"",
