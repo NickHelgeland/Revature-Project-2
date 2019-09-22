@@ -2,8 +2,8 @@ package com.project2.socialmedia.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project2.socialmedia.dao.UserDAO;
@@ -26,8 +26,8 @@ public class GetLoggedInUserController
 	 * @return
 	 */
 	@CrossOrigin
-	@PostMapping(value="/getLoggedInUser")
-	public Users getLoggedInUser(@RequestBody String username)
+	@GetMapping(value="/getLoggedInUser/{username}")
+	public Users getLoggedInUser(@PathVariable String username)
 	{
 		Users user = userRepo.selectOne(username);
 		
