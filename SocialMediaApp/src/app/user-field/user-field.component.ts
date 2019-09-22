@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AppComponent } from '../app.component';
 import { SessionService } from '../session.service';
 import { User } from '../user';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-user-field',
@@ -17,8 +18,9 @@ export class UserFieldComponent implements OnInit {
 
   user: User
 
+  content: string
   tData: string = '';
-  tDatas: Array<string> = [];
+  tDatas: Array<Post> = [];
   like: number = 0;
   likes: Array<number> = [];
 
@@ -32,7 +34,8 @@ export class UserFieldComponent implements OnInit {
   }
 
   inputData() {      
-    this.tDatas.push(this.tData);  
+    // this.tDatas.push(this.tData);
+    // this.tData = ''  
     // if (this.tData != '' || this.tData != null) {      
     //   this.tDatas.push(this.tData);
     // }          
