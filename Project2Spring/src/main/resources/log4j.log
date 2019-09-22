@@ -489,3 +489,5 @@ Caused by: java.lang.IllegalArgumentException: Secret key cannot be null.
 2019-09-22 14:03:44 INFO  DispatcherServlet:509 - FrameworkServlet 'dispatcher': initialization completed in 62 ms
 2019-09-22 14:03:45 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
 2019-09-22 14:03:46 INFO  LoggingAspect:22 - A user has logged in.
+2019-09-22 14:17:51 INFO  XmlWebApplicationContext:993 - Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Sun Sep 22 14:03:44 EDT 2019]; parent: Root WebApplicationContext
+2019-09-22 14:17:51 INFO  XmlWebApplicationContext:993 - Closing Root WebApplicationContext: startup date [Sun Sep 22 14:03:15 EDT 2019]; root of context hierarchy
