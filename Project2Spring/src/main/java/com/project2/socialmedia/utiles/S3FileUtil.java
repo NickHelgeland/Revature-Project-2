@@ -13,6 +13,11 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 
+/**
+ * This class obtain the S3 file from AWS Amazon.
+ * @author Nick, Ilia, Danny and Fausto.
+ *
+ */
 @Component
 public class S3FileUtil implements InitializingBean {
 

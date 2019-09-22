@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.project2.socialmedia.model.Users;
 
 /**
- * This class provide the dao implementation for Users
- * @author frere
+ * This class provide the dao implementation for Users.
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 @Repository("userRepo")
@@ -25,7 +25,7 @@ public class UserDAO implements Insert<Users>, Update<Users>
 	private SessionFactory sf;
 	
 	/**
-	 * This method insert data in the DataBase
+	 * This method insert data in the DataBase.
 	 */
 	public void insert(Users obj) {
 		sf.getCurrentSession().save(obj);
@@ -33,7 +33,7 @@ public class UserDAO implements Insert<Users>, Update<Users>
 	}
 
 	/**
-	 * This method update the database 
+	 * This method update the database. 
 	 */
 	public void update(Users obj) {
 		sf.getCurrentSession().merge(obj);		
@@ -41,9 +41,9 @@ public class UserDAO implements Insert<Users>, Update<Users>
 
 	/**
 	 * This method return user if it find a user in the database with 
-	 * the parameter (username)
+	 * the parameter (username).
 	 * @param username
-	 * @return
+	 * @return Users
 	 */
 	public Users selectOne(String username) {
 		Session session = sf.openSession();
@@ -52,9 +52,9 @@ public class UserDAO implements Insert<Users>, Update<Users>
 	}
 	
 	/**
-	 * this method return user if it find by email (email) in the parameter
+	 * this method return user if it find by email (email) in the parameter.
 	 * @param email
-	 * @return
+	 * @return Users
 	 */
 	public Users selectOneEmail(String email) {
 		Session session = sf.openSession();
@@ -63,8 +63,8 @@ public class UserDAO implements Insert<Users>, Update<Users>
 	}
 
 	/**
-	 * This method return all users
-	 * @return
+	 * This method return all users.
+	 * @return List<Users>
 	 */
 	public List<Users> selectAll() {
 		Session session = sf.openSession();

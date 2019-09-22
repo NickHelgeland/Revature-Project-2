@@ -15,8 +15,8 @@ import com.project2.socialmedia.model.Users;
 import com.project2.socialmedia.response.UserChange;
 import com.project2.socialmedia.utiles.SendMail;
 /**
- * This class update the temporary password 
- * @author Nick, Ilia, Danny and Fausto
+ * This class update the temporary password. 
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 @RestController
@@ -25,7 +25,7 @@ public class EmailUserController {
 	UserDAO userDao;
 	/**
 	 * This method is an endpoint to get information for the user to send the
-	 * new temporary password
+	 * new temporary password.
 	 * @param requestUser
 	 * @param httpSession
 	 */

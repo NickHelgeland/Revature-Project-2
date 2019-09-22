@@ -1,8 +1,8 @@
 package com.project2.socialmedia.response;
 
 /**
- * This class provide the email, passWord  as ecrypTp
- * @author frere
+ * This class provide the email, passWord  as ecrypTp.
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 
@@ -48,7 +48,7 @@ public class UserChange {
 	
 	/**
 	 * Method Return PassWord
-	 * @return
+	 * @return String
 	 */
 	public String getPassWord() {
 		return passWord;
@@ -65,7 +65,7 @@ public class UserChange {
 	
 	/**
 	 * Method return encrypt password
-	 * @return
+	 * @return String
 	 */
 	public String getEcryptP() {
 		return ecryptP;

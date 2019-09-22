@@ -15,7 +15,7 @@ import com.project2.socialmedia.response.Credentials;
 import com.project2.socialmedia.response.Result;
 /**
  * This is a restful to login the app.
- * @author Nick, Ilia, Danny and Fausto
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 @RestController
@@ -50,7 +50,7 @@ public class LoginController
 	 * application.
 	 * @param username
 	 * @param password
-	 * @return
+	 * @return boolean
 	 */
 	private boolean checkCredentials(String username, String password)
 	{
@@ -69,7 +69,7 @@ public class LoginController
 	}
 	
 	/**
-	 * This method is to get the Attribute username	
+	 * This method is to get the Attribute username.	
 	 * @param username
 	 * @param session
 	 */
