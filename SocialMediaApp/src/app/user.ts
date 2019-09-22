@@ -1,8 +1,8 @@
 export class User 
 {
-    firstname: string
+    firstName: string
 
-    lastname: string
+    lastName: string
 
     address: string
 
@@ -10,8 +10,8 @@ export class User
 
     constructor(firstname: string, lastname: string, address: string, email:string)
     {
-        this.firstname = firstname
-        this.lastname = lastname
+        this.firstName = firstname
+        this.lastName = lastname
         this.address = address
         this.email = email
     }

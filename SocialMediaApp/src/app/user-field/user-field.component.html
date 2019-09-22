@@ -43,23 +43,20 @@
             </div>
 
             <div class="user-specs">
-                <h3>John Doeh</h3>
+                <h3>{{user.firstName}} {{user.lastName}}</h3>
             </div>
         </div>
         <div class="user-fw-status">
             <div>
-                <p>Following</p>
-                <span>34</span>
+                <p>Email</p>
+                <span>{{user.email}}</span>
             </div>
             <div>
-                <p>Following</p>
-                <span>34</span>
+                <p>Address</p>
+                <span>{{user.address}}</span>
             </div>
             <div>
-                <a class="view_profile">View Profile</a>
-            </div>
-            <div>
-                Upload File: <input type="file" id="fileUpload" (change)="uploadFile($event)">
+                Upload Profile Picture: <input type="file" id="fileUpload" (change)="uploadFile($event)">
             </div>
         </div>
     </div>
