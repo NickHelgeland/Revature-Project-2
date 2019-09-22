@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { SessionService } from 'src/app/session.service';
 
 @Component({
   selector: 'app-update-form',
@@ -17,10 +18,10 @@ export class UpdateFormComponent implements OnInit {
 
   APP_URL = 'http://localhost:9005/Project2Spring/api';
   
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient, private _session: SessionService) {}
 
   ngOnInit() {
-    this._http.get(this.APP_URL + '/getLoggedInUser').subscribe(
+    this._http.get(this.APP_URL + '/getLoggedInUser/' + this._session.username).subscribe(
       data => {
         this.myresponse = data;
       },

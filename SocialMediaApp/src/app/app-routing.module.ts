@@ -20,8 +20,7 @@ const routes: Routes = [
   { path: 'user-field', component: UserFieldComponent },
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'user-menu', component: UserMenuComponent },
-  { path: 'update-form', component: UpdateFormComponent}
-  { path: 'user-menu', component: UserMenuComponent },
+  { path: 'update-form', component: UpdateFormComponent},
   { path: 'search-friend', component: SearchFriendComponent },
   { path: 'invitation', component: InvitationComponent },
   { path: 'changepassword', component: ChangepasswordComponent }

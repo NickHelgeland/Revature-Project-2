@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
         if (data.result == "success")
         {
           this._session.setUsername(this.credentials.username)
-          this.routingService.emitChange('user-field')
+          this.routingService.emitChange('update-form')
         }
       },
       error => {
