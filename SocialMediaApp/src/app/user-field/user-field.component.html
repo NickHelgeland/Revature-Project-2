@@ -80,16 +80,8 @@
         </form>
     </div>
     <div class="posts-section-int">
-        <div class="comment_box">
-            <form class="row">
-                <input type="text" placeholder="Post a comment" [(ngModel)]="tData"
-                    [ngModelOptions]="{standalone: true}">
-                <a class="plus-ic" (click)="inputData()"><i class="la la-plus"></i></a>
-            </form>
-        </div>
         <ul>
             <li *ngFor="let tData of tDatas">
-                <!-- *ngFor="let tData of tDatas"-->
                 <div class="text_descp">
                     <p> {{ tData }} </p>
                 </div>
@@ -100,12 +92,3 @@
         </ul>
     </div>
 </div>
-
-<!-- <div class="posty">
-    <div class="comment_box">
-        <form class="row">
-            <input type="text" placeholder="Post a comment" [(ngModel)]="tData">
-            <a class="plus-ic" (click)="inputData()"><i class="la la-plus"></i></a>
-        </form>
-    </div>
-</div> -->
