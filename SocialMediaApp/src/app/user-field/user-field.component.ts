@@ -78,9 +78,22 @@ export class UserFieldComponent implements OnInit {
     let signedUrl = await urlResponse.text();
 
     this.src = signedUrl
+  }
+
+  getUserInformation(username: string)
+  {
+    this._http.get(this.baseUrl + 'getLoggedInUser/' + username).subscribe(
+      (data: User) => {
+        this.user = data
+      }
+    )
   }  
   
-  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { this.getFile() }
+  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) 
+  { 
+    this.getFile() 
+    this.getUserInformation(this._session.username)
+  }
 
   togglePage() {
     this._toggle.toggleLogOut();

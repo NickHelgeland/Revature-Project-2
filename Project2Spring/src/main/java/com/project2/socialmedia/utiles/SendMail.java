@@ -15,8 +15,8 @@ import com.project2.socialmedia.model.Users;
 
 import javax.mail.PasswordAuthentication;
 /**
- * this class send the email
- * @author frer
+ * this class send the email.
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 public class SendMail {	
@@ -26,7 +26,7 @@ public class SendMail {
 	 * return true if it is successful and false it is not.
 	 * @param email
 	 * @param user
-	 * @return
+	 * @return boolean
 	 */
 	public static boolean sendMail(Email email, Users user) {
 				

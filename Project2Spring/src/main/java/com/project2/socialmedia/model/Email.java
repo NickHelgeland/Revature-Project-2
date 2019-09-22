@@ -1,5 +1,10 @@
 package com.project2.socialmedia.model;
-
+/**
+ * A class where set up the requirements to send  an email 
+ * confirmation.
+ * @author Nick, Ilia, Danny and Fausto.
+ *
+ */
 public class Email {
 	
 	private String eFromEmail = "personal56company@gmail.com";

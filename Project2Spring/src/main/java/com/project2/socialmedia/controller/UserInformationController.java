@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project2.socialmedia.dao.UserDAO;
 import com.project2.socialmedia.model.Users;
 /**
- * This class is a restful for sending all users
- * @author frere
+ * This class is a restful for sending all users.
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 @RestController

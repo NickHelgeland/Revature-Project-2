@@ -11,8 +11,8 @@ import com.project2.socialmedia.model.Users;
 import com.project2.socialmedia.response.Image;
 
 /**
- * 
- * @author Nick, Ilia, Danny and Fausto
+ * This class change the logo of the application.
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 @RestController
@@ -20,7 +20,10 @@ public class UpdateProfileImageController
 {
 	@Autowired
 	UserDAO userRepo;
-	
+	/**
+	 * That is an sndpoint to update the image
+	 * @param image
+	 */
 	@CrossOrigin
 	@PostMapping(value = "/updateImage")
 	public void updateImage(@RequestBody Image image)

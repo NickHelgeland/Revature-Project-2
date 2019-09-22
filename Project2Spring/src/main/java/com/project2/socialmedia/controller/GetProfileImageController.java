@@ -10,8 +10,8 @@ import com.project2.socialmedia.dao.Select;
 import com.project2.socialmedia.dao.UserDAO;
 import com.project2.socialmedia.model.Users;
 /**
- * 
- * @author Nick, Ilia, Danny and Fausto
+ * This class get the image from the computer.
+ * @author Nick, Ilia, Danny and Fausto.
  *
  */
 @RestController

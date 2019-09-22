@@ -10,7 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+/**
+ * This class provide Post and, the mapping with the database and also generate
+ * the schema for the database.
+ * @author Nick, Ilia, Danny and Fausto.
+ *
+ */
 @Entity
 @Table(name="post")
 public class Post
