@@ -8,15 +8,14 @@ import { SessionService } from '../session.service';
   templateUrl: './user-field.component.html',
   styleUrls: ['./user-field.component.css']
 })
-export class UserFieldComponent implements OnInit { 
+export class UserFieldComponent implements OnInit {
 
   baseUrl: string = "http://localhost:9005/Project2Spring/api/"
 
   tData: string = '';
   likeCounter: number = 0;
 
-  async uploadFile(event)
-  {
+  async uploadFile(event) {
     let file = event.target.files[0]
     let urlResponse = await fetch(this.baseUrl + 's3/' + file.name, {
       method: 'PUT'
@@ -30,11 +29,10 @@ export class UserFieldComponent implements OnInit {
     this.updateProfilePicture(file.name)
   }
 
-  updateProfilePicture(filename: string)
-  {
+  updateProfilePicture(filename: string) {
     let image = {
-      name : filename,
-      username : this._session.getUsername()
+      name: filename,
+      username: this._session.getUsername()
     }
 
     this._http.post(this.baseUrl + 'updateImage', image).subscribe()
@@ -48,10 +46,12 @@ export class UserFieldComponent implements OnInit {
   inputData() {
     this.tData = this.tData;
   }
-  
-  constructor(private _http: HttpClient, private _session: SessionService) { }
 
-  
-  
-  ngOnInit() { }  
+  togglePage() {
+    this._toggle.toggleLogOut();
+  }
+
+  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { }  
+
+  ngOnInit() { }
 }
