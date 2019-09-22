@@ -733,10 +733,11 @@ nav ul li span img {
     margin-top: 20px;
     margin-left: 50px;
     width: 940px;
-    height: 440px;
+    height: 640px;
     text-align: center;
     border: 2px solid #119987;
     border-radius: 5px;
+    overflow: auto;
 }
 
 .post-bar {
@@ -882,9 +883,10 @@ nav ul li span img {
     margin-right: 7px;
 }
 
-.bk-links li:last-child {
+
+/* .bk-links li:last-child {
     margin-right: 0;
-}
+} */
 
 .bk-links li i {
     color: #fff;
@@ -904,27 +906,16 @@ nav ul li span img {
 .text_descp {
     float: left;
     width: 100%;
+    color: #000000;
 }
 
-.text_descp h3 {
-    color: #333;
+.text_descp p {
+    float: left;
+    width: 100%;
+    color: #000000;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 15px;
-}
-
-.text_descp>p {
-    color: #000000;
-    font-size: 20px;
-    line-height: 24px;
-    margin-bottom: 20px;
-}
-
-.text_descp>p a {
-    color: #b3d8d3;
-    font-weight: 600;
-    font-size: 20px;
-    cursor: pointer;
 }
 
 .status-bar {
@@ -942,15 +933,15 @@ nav ul li span img {
     cursor: pointer;
 }
 
-.status-bar>a:hover {
-    color: #b3d8d3;
-}
-
 .posty {
     float: left;
-    width: 100%;
-    border-left: 1px solid #e4e4e4;
-    border-right: 1px solid #e4e4e4;
+    margin-top: 20px;
+    margin-left: 32.7%;
+    width: 940px;
+    height: 80px;
+    text-align: center;
+    border: 2px solid #119987;
+    border-radius: 5px;
 }
 
 .comment-section {
@@ -961,20 +952,36 @@ nav ul li span img {
     box-shadow: 0px 3px #e4e4e4;
 }
 
+.comment_box input {
+    margin-top: 5px;
+    margin-left: 25px;
+    float: left;
+    width: 920px;
+    height: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background-color: #efefef;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
 .plus-ic {
     float: left;
     margin-left: 50%;
     text-align: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .plus-ic i {
+    margin-top: 5px;
     width: 30px;
     height: 30px;
     line-height: 30px;
-    border: 1px solid #d2d2d2;
+    border: 2px solid #119987;
     text-align: center;
-    color: #b2b2b2;
+    color: #119987;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     -ms-border-radius: 100px;
@@ -983,48 +990,10 @@ nav ul li span img {
     cursor: pointer;
 }
 
-.post-comment {
-    float: left;
-    width: 100%;
-}
-
 .cm_img {
     float: left;
     width: 40px;
     margin-right: 10px;
-}
-
-.comment_box {
-    float: none;
-}
-
-.comment_box input {
-    width: 100%;
-    height: 40px;
-    border: 1px solid #e5e5e5;
-    border-radius: 5px;
-    background-color: #efefef;
-    padding-left: 10px;
-    color: #000000;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 40px;
-    resize: none;
-}
-
-.comment_box form button {
-    float: right;
-    color: #fff;
-    background-color: #119987;
-    height: 40px;
-    padding: 0 10px;
-    text-align: center;
-    font-size: 14px;
-    border: 0;
-    border-radius: 5px;
-    margin-left: 10px;
-    cursor: pointer;
-    font-weight: 600;
 }
 
 .like-com {

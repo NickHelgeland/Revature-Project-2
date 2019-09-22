@@ -13,7 +13,9 @@ export class UserFieldComponent implements OnInit {
   baseUrl: string = "http://localhost:9005/Project2Spring/api/"
 
   tData: string = '';
-  likeCounter: number = 0;
+  tDatas: Array<string> = [];
+  like: number = 0;
+  likes: Array<number> = [];
 
   async uploadFile(event) {
     let file = event.target.files[0]
@@ -39,19 +41,25 @@ export class UserFieldComponent implements OnInit {
     alert("Image has been uploaded")
   }
 
-  likeCount() {
-    this.likeCounter += 1;
+  likeCount() {       
+    this.like += 1;
+    // if (this.like) {
+    //   this.like += 1;
+    //   this.likes.push(this.like);
+    // }
   }
 
-  inputData() {
-    this.tData = this.tData;
+  inputData() {        
+    if (this.tData != '' || this.tData != null) {      
+      this.tDatas.push(this.tData);
+    }          
   }
 
   togglePage() {
     this._toggle.toggleLogOut();
   }
 
-  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { }  
+  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { }
 
   ngOnInit() { }
 }
