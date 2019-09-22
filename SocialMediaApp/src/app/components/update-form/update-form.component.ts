@@ -101,6 +101,7 @@ export class UpdateFormComponent implements OnInit {
     this.profileDataInput.address = this.myresponse.address;
 
     this._http.post("http://localhost:9005/Project2Spring/api/updateUser", this.profileDataInput).subscribe()
+    alert('Your profile was updated');
   }
 
   togglePage() {

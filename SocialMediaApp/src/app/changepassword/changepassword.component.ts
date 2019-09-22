@@ -93,6 +93,7 @@ export class ChangepasswordComponent implements OnInit {
   {
     this.updateInfo.password = this._encryptor.hash(this.cpassword)
     this._http.post("http://localhost:9005/Project2Spring/api/passwordReset", this.updateInfo).subscribe()
+    alert('Your password was updated');
   }
   
 }
