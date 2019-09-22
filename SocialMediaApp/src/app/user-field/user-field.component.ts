@@ -18,7 +18,9 @@ export class UserFieldComponent implements OnInit {
   user: User
 
   tData: string = '';
-  likeCounter: number = 0;
+  tDatas: Array<string> = [];
+  like: number = 0;
+  likes: Array<number> = [];
 
   async uploadFile(event)
   {
@@ -47,41 +49,27 @@ export class UserFieldComponent implements OnInit {
     alert("Image has been uploaded")
   }
 
-  async getFile()
-  {
-    let getImageRespone = await fetch(this.baseUrl + 'getProfilePic/' + this._session.username, {
-        method: 'GET'
-    })
-    let imageName = await getImageRespone.text()
-
-    let urlResponse = await fetch(this.baseUrl + 's3/' + imageName, {
-    method: 'GET'
-    });
-    let signedUrl = await urlResponse.text();
-
-    this.src = signedUrl
+  likeCount() {       
+    this.like += 1;
+    // if (this.like) {
+    //   this.like += 1;
+    //   this.likes.push(this.like);
+    // }
   }
 
-  getUserInformation(username: string)
-  {
-    this._http.get(this.baseUrl + 'getLoggedInUser/' + username).subscribe(
-      (data: User) => {
-        this.user = data
-      }
-    )
-  }
-
-  likeCount() {
-    this.likeCounter += 1;
-  }
-
-  inputData() {
-    this.tData = this.tData;
+  inputData() {        
+    if (this.tData != '' || this.tData != null) {      
+      this.tDatas.push(this.tData);
+    }          
   }
   
   constructor(private _http: HttpClient, private _session: SessionService) { this.getFile() }
 
-  
-  
-  ngOnInit() { }  
+  togglePage() {
+    this._toggle.toggleLogOut();
+  }
+
+  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { }
+
+  ngOnInit() { }
 }
