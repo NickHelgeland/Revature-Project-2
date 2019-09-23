@@ -1,15 +1,16 @@
+import { User } from './user'
+
 export class Post 
 {
     postId: number
 
     content: string
 
-    owner: string
+    owner: User
 
-    constructor(postId: number, content: string, owner: string)
+    constructor(content: string, user: User)
     {
-        this.postId = postId
         this.content = content
-        this.owner = owner
+        this.owner = user
     }
 }
