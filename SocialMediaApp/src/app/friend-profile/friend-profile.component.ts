@@ -55,7 +55,6 @@ export class FriendProfileComponent implements OnInit {
             this.tDatas.push(data[i])
           }
         } 
-        //this.tDatas = data
       }
     )
   }
