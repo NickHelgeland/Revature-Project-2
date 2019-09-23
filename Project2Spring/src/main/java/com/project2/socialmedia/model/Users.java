@@ -10,7 +10,7 @@ import javax.persistence.Table;
 /**
  * This class provide User and, the mapping with the database and also generate
  * the schema for the database.
- * @author frere
+ * @author Nick, Ilia, Danny, and Fausto.
  *
  */
 @Entity
