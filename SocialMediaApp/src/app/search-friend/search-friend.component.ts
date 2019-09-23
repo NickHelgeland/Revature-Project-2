@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { AppComponent } from '../app.component';
 import { SessionService } from '../session.service';
 import { User } from '../user';
+import { SelectedUserService } from '../selected-user.service';
+import { RoutingService } from '../routing.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-friend',
@@ -77,7 +80,8 @@ export class SearchFriendComponent implements OnInit {
     this._toggle.toggleLogOut();
   }
 
-  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { 
+  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent, 
+    private _selectedUser: SelectedUserService, private _router: Router) { 
     
     this.getFile(this._session.username)
     this.getUserInformation(this._session.username) 
@@ -117,8 +121,8 @@ export class SearchFriendComponent implements OnInit {
 
   viewProfile(user: User)
   {
-    this.getUserInformation(user.userName)
-    this.getFile(user.userName)
+    this._selectedUser.selectedUser = user
+    this._router.navigate(['app-friend-profile'])
   }
 
   ngOnInit() { }

@@ -33,11 +33,14 @@ export class UserFieldComponent implements OnInit {
     this.likes.push(this.like);    
   }
 
-   inputData() {
+   async inputData() {
     if (this.tData !== '' && this.tData !== null) {
       this.postObj.content = this.tData
-      this._http.post(this.baseUrl + 'addPost', this.postObj).subscribe()
-      this.getPosts()
+      this._http.post(this.baseUrl + 'addPost', this.postObj).subscribe(
+        data => {
+          this.getPosts()
+        }
+      )
     }
   }
 
@@ -53,7 +56,6 @@ export class UserFieldComponent implements OnInit {
       body: file
     })
     this.updateProfilePicture(file.name)
-    this.getFile(this._session.username)
   }
 
   updateProfilePicture(filename: string) {
@@ -62,8 +64,13 @@ export class UserFieldComponent implements OnInit {
       username: this._session.getUsername()
     }
 
-    this._http.post(this.baseUrl + 'updateImage', image).subscribe()
-    alert("Image has been uploaded")
+    this._http.post(this.baseUrl + 'updateImage', image).subscribe(
+      data => {
+        this.getFile(this._session.username)
+        alert("Image has been uploaded")
+      }
+    )
+    
   }
 
   async getFile(username: string) {
@@ -93,7 +100,6 @@ export class UserFieldComponent implements OnInit {
     this._http.get(this.baseUrl + 'getAllPosts').subscribe(
       (data: Array<Post>) => {
         this.tDatas = data
-        console.log("")
       }
     )
   }
