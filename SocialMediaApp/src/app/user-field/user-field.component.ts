@@ -34,13 +34,11 @@ export class UserFieldComponent implements OnInit {
   }
 
    inputData() {
-    // if (this.tData !== '' && this.tData !== null) {
-    //   this.tDatas.push(this.tData);
-    //   this.tData = '';
-    // }
-    this.postObj.content = this.tData
-    this._http.post(this.baseUrl + 'addPost', this.postObj).subscribe()
-    this.getPosts()
+    if (this.tData !== '' && this.tData !== null) {
+      this.postObj.content = this.tData
+      this._http.post(this.baseUrl + 'addPost', this.postObj).subscribe()
+      this.getPosts()
+    }
   }
 
   async uploadFile(event) {
