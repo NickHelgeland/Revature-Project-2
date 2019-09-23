@@ -114,14 +114,6 @@ public class Users {
 		this.address = address;
 	}
 
-	public List<Post> getPostList() {
-		return postList;
-	}
-
-	public void setPostList(List<Post> postList) {
-		this.postList = postList;
-	}
-
 	public String getImageName() {
 		return imageName;
 	}
@@ -129,12 +121,4 @@ public class Users {
 	public void setImageName(String imageName) {
 		this.imageName = imageName;
 	}
-
-	@Override
-	public String toString() {
-		return "User [userName=" + username + ", passWord=" + password + ", firstName=" + firstname + ", lastName="
-				+ lastname + ", email=" + email + ", address=" + address + ", postList=" + postList + "]";
-	}
-
-	
 }

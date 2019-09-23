@@ -67,12 +67,24 @@ export class ChangepasswordComponent implements OnInit {
     this.src = signedUrl
   }
 
+  getUserInformation(username: string)
+  {
+    this._http.get(this.baseUrl + 'getLoggedInUser/' + username).subscribe(
+      (data: User) => {
+        this.user = data
+      }
+    )
+  }  
+
   togglePage() {
     this._toggle.toggleLogOut();
   }
 
   constructor(private _http: HttpClient, private _router: Router, private _encryptor: EncryptService, 
-    private _toggle: AppComponent, private _session: SessionService) { this.getFile() }
+    private _toggle: AppComponent, private _session: SessionService) { 
+      this.getFile()
+      this.getUserInformation(this._session.username) 
+    }
 
   ngOnInit() {
   }
@@ -81,6 +93,7 @@ export class ChangepasswordComponent implements OnInit {
   {
     this.updateInfo.password = this._encryptor.hash(this.cpassword)
     this._http.post("http://localhost:9005/Project2Spring/api/passwordReset", this.updateInfo).subscribe()
+    alert('Your password was updated');
   }
   
 }

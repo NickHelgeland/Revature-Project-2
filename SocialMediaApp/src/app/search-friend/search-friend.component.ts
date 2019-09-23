@@ -63,13 +63,23 @@ export class SearchFriendComponent implements OnInit {
     this.src = signedUrl
   }
 
+  getUserInformation(username: string)
+  {
+    this._http.get(this.baseUrl + 'getLoggedInUser/' + username).subscribe(
+      (data: User) => {
+        this.user = data
+      }
+    )
+  }  
+
   togglePage() {
     this._toggle.toggleLogOut();
   }
 
   constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { 
     
-    this.getFile() 
+    this.getFile()
+    this.getUserInformation(this._session.username) 
 
     this._http.get(this.APP_URL + 'getUsers').subscribe(
       data => {

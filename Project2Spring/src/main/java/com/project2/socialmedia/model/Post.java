@@ -28,14 +28,13 @@ public class Post
 	@Column(name = "content", nullable = false)
 	private String content;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "username")
 	private Users owner;
 
-	public Post(long postId, String content, Users username)
+	public Post(String content, Users username)
 	{
 		super();
-		this.postId = postId;
 		this.content = content;
 		this.owner = username;
 	}
@@ -60,6 +59,14 @@ public class Post
 	public void setContent(String content)
 	{
 		this.content = content;
+	}
+
+	public Users getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Users owner) {
+		this.owner = owner;
 	}
 
 	@Override

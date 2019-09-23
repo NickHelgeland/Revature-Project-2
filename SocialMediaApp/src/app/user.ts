@@ -1,3 +1,5 @@
+import { Post } from './post'
+
 export class User 
 {
     firstName: string
@@ -7,6 +9,8 @@ export class User
     address: string
 
     email: string
+
+    postList: Array<Post>;
 
     constructor(firstname: string, lastname: string, address: string, email:string)
     {

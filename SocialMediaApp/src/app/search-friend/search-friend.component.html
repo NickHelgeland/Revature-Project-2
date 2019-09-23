@@ -14,11 +14,6 @@
                         </a>
                     </li>
                     <li>
-                        <a routerLink="/invitation">
-                            <span><img src="../../assets/icon7.png" alt=""></span> Invitation
-                        </a>
-                    </li>
-                    <li>
                         <a routerLink="/changepassword">
                             <span><img src="../../assets/icon6.png" alt=""></span> Change Password
                         </a>
@@ -42,23 +37,23 @@
             </div>
 
             <div class="user-specs">
-                <h3>John Doeh</h3>
+                <h3>{{user.firstName}} {{user.lastName}}</h3>
             </div>
         </div>
         <div class="user-fw-status">
             <div>
-                <p>Following</p>
-                <span>34</span>
+                <p>Email</p>
+                <span>{{user.email}}</span>
             </div>
             <div>
-                <p>Following</p>
-                <span>34</span>
+                <p>Address</p>
+                <span>{{user.address}}</span>
             </div>
-            <div>
-                <a class="view_profile">View Profile</a>
+            <div id="pic-upload">
+                Upload Profile Picture: <input type="file" id="fileUpload" (change)="uploadFile($event)">
             </div>
-            <div>
-                Upload File: <input type="file" id="fileUpload" (change)="uploadFile($event)">
+            <div id="update-button">
+                <button routerLink="/update-form">Update Profile</button>
             </div>
         </div>
     </div>

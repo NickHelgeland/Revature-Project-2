@@ -15,11 +15,6 @@
                         </a>
                     </li>
                     <li>
-                        <a routerLink="/invitation">
-                            <span><img src="../../assets/icon7.png"></span> Invatation
-                        </a>
-                    </li>
-                    <li>
                         <a routerLink="/changepassword">
                             <span><img src="../../assets/icon6.png"></span> Change Password
                         </a>
@@ -55,8 +50,11 @@
                 <p>Address</p>
                 <span>{{user.address}}</span>
             </div>
-            <div>
+            <div id="pic-upload">
                 Upload Profile Picture: <input type="file" id="fileUpload" (change)="uploadFile($event)">
+            </div>
+            <div id="update-button">
+                <button routerLink="/update-form">Update Profile</button>
             </div>
         </div>
     </div>
@@ -64,39 +62,23 @@
 
 <div class="posts-section">
     <h3>{{user.firstName}}</h3>
-    <div class="epi-sec">
-        <ul class="bk-links">
-            <li><a><i class="la la-bookmark"></i></a></li>
-            <li><a><i class="la la-envelope"></i></a></li>
-        </ul>
+    <div class="comment_box">
+        <form class="row">
+            <input type="text" placeholder="Post a comment" [(ngModel)]="tData" [ngModelOptions]="{standalone: true}" />
+            <a class="plus-ic" (click)="inputData()"><i class="la la-plus"></i></a>
+            <!-- <button class="btn btn-primary" type="button" (click)="inputData()">Submit</button> -->
+        </form>
     </div>
     <div class="posts-section-int">
         <ul>
-            <li *ngFor="let tData of tDatas">
-                <!-- *ngFor="let tData of tDatas"-->
+            <li *ngFor="let posts of tDatas">
                 <div class="text_descp">
-                    <p> {{ tData }} </p>
-                </div>
-                <div class="status-bar">
-                    <!--*ngFor="let like of likes"-->
-                    <a><i class="fas fa-heart" (click)="likeCount()"></i> {{ like }} </a>
+                    <!-- <span> -->
+                    <p id="post-username">{{posts.owner.firstName}} {{posts.owner.lastName}}: </p>
+                    <p id="post-content">{{ posts.content }}</p>
+                    <!-- </span> -->
                 </div>
             </li>
         </ul>
-        <div class="comment_box">
-            <form class="row">
-                <input type="text" placeholder="Post a comment" [(ngModel)]="tData">
-                <a class="plus-ic" (click)="inputData()"><i class="la la-plus"></i></a>
-            </form>
-        </div>
     </div>
 </div>
-
-<!-- <div class="posty">
-    <div class="comment_box">
-        <form class="row">
-            <input type="text" placeholder="Post a comment" [(ngModel)]="tData">
-            <a class="plus-ic" (click)="inputData()"><i class="la la-plus"></i></a>
-        </form>
-    </div>
-</div> -->
