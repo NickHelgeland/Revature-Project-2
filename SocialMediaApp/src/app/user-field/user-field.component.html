@@ -73,10 +73,10 @@
         <ul>
             <li *ngFor="let posts of tDatas">
                 <div class="text_descp">
-                    <span>
-                        <p>{{posts.owner.firstName}} {{posts.owner.lastName}}: </p> 
-                        <p>{{ posts.content }}</p>
-                    </span>
+                    <!-- <span> -->
+                    <p id="post-username">{{posts.owner.firstName}} {{posts.owner.lastName}}: </p>
+                    <p id="post-content">{{ posts.content }}</p>
+                    <!-- </span> -->
                 </div>
             </li>
         </ul>
