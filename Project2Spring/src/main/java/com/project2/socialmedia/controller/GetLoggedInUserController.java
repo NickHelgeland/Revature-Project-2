@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project2.socialmedia.dao.UserDAO;
 import com.project2.socialmedia.model.Users;
+import com.project2.socialmedia.response.UpdatedInformation;
 
 /**
  * This class is a restful to get a single user.

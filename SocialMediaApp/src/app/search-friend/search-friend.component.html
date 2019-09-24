@@ -14,11 +14,6 @@
                         </a>
                     </li>
                     <li>
-                        <a routerLink="/invitation">
-                            <span><img src="../../assets/icon7.png" alt=""></span> Invitation
-                        </a>
-                    </li>
-                    <li>
                         <a routerLink="/changepassword">
                             <span><img src="../../assets/icon6.png" alt=""></span> Change Password
                         </a>
@@ -82,7 +77,7 @@
                 <tr *ngFor="let user of myresponse">
                     <td>{{user.firstName}}</td>
                     <td id="tdl">{{user.lastName}}</td>
-                    <td><button type="submit" value="submit" id="button" (input)="Invite()">Invitation</button></td>
+                    <td><button type="submit" value="submit" id="button" (click)="viewProfile(user)">View Profile</button></td>
                 </tr>
             </tbody>
         </table>

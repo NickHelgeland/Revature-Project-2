@@ -40,7 +40,6 @@ export class UpdateFormComponent implements OnInit {
       body: file
     })
     this.updateProfilePicture(file.name)
-    this.getFile()
   }
 
   updateProfilePicture(filename: string)
@@ -50,8 +49,12 @@ export class UpdateFormComponent implements OnInit {
       username : this._session.getUsername()
     }
 
-    this._http.post(this.baseUrl + 'updateImage', image).subscribe()
-    alert("Image has been uploaded")
+    this._http.post(this.baseUrl + 'updateImage', image).subscribe(
+      data => {
+        this.getFile()
+        alert("Image has been uploaded")
+      }
+    )
   }
 
   async getFile()
@@ -100,8 +103,12 @@ export class UpdateFormComponent implements OnInit {
     this.profileDataInput.email = this.myresponse.email;
     this.profileDataInput.address = this.myresponse.address;
 
-    this._http.post("http://localhost:9005/Project2Spring/api/updateUser", this.profileDataInput).subscribe()
-    alert('Your profile was updated');
+    this._http.post("http://localhost:9005/Project2Spring/api/updateUser", this.profileDataInput).subscribe(
+      data => {
+        this.getUserInformation(this._session.username)
+        alert('Your profile was updated');
+      }
+    )
   }
 
   togglePage() {

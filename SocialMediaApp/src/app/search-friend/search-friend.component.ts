@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { AppComponent } from '../app.component';
 import { SessionService } from '../session.service';
 import { User } from '../user';
+import { SelectedUserService } from '../selected-user.service';
+import { RoutingService } from '../routing.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-friend',
@@ -17,7 +20,8 @@ export class SearchFriendComponent implements OnInit {
 
   user: User
   
-  myresponse; myresp;
+  myresponse: Array<User>; 
+  myresp: Array<User>;
   
   APP_URL = 'http://localhost:9005/Project2Spring/api/';
 
@@ -34,7 +38,7 @@ export class SearchFriendComponent implements OnInit {
       body: file
     })
     this.updateProfilePicture(file.name)
-    this.getFile()
+    this.getFile(this._session.username)
   }
 
   updateProfilePicture(filename: string)
@@ -48,9 +52,9 @@ export class SearchFriendComponent implements OnInit {
     alert("Image has been uploaded")
   }
 
-  async getFile()
+  async getFile(username: string)
   {
-    let getImageRespone = await fetch(this.baseUrl + 'getProfilePic/' + this._session.username, {
+    let getImageRespone = await fetch(this.baseUrl + 'getProfilePic/' + username, {
         method: 'GET'
     })
     let imageName = await getImageRespone.text()
@@ -76,13 +80,14 @@ export class SearchFriendComponent implements OnInit {
     this._toggle.toggleLogOut();
   }
 
-  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) { 
+  constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent, 
+    private _selectedUser: SelectedUserService, private _router: Router) { 
     
-    this.getFile()
+    this.getFile(this._session.username)
     this.getUserInformation(this._session.username) 
 
     this._http.get(this.APP_URL + 'getUsers').subscribe(
-      data => {
+      (data: Array<User>) => {
         this.myresponse = data;
         this.myresp = this.myresponse;
       },
@@ -112,6 +117,12 @@ export class SearchFriendComponent implements OnInit {
             }
         } 
     }
+  }
+
+  viewProfile(user: User)
+  {
+    this._selectedUser.selectedUser = user
+    this._router.navigate(['app-friend-profile'])
   }
 
   ngOnInit() { }

@@ -13,9 +13,14 @@ import { Post } from '../post';
 export class UserFieldComponent implements OnInit {
 
   tData: string;
-  tDatas: Array<string> = [];
+  tDatas: Array<Post>
   like: number = 0;
   likes: Array<number> = [];
+
+  postObj = {
+    username : this._session.username,
+    content : ''
+  }
 
   baseUrl: string = "http://localhost:9005/Project2Spring/api/"
 
@@ -28,10 +33,14 @@ export class UserFieldComponent implements OnInit {
     this.likes.push(this.like);    
   }
 
-  inputData() {
+   async inputData() {
     if (this.tData !== '' && this.tData !== null) {
-      this.tDatas.push(this.tData);
-      this.tData = '';
+      this.postObj.content = this.tData
+      this._http.post(this.baseUrl + 'addPost', this.postObj).subscribe(
+        data => {
+          this.getPosts()
+        }
+      )
     }
   }
 
@@ -47,7 +56,6 @@ export class UserFieldComponent implements OnInit {
       body: file
     })
     this.updateProfilePicture(file.name)
-    this.getFile()
   }
 
   updateProfilePicture(filename: string) {
@@ -56,12 +64,17 @@ export class UserFieldComponent implements OnInit {
       username: this._session.getUsername()
     }
 
-    this._http.post(this.baseUrl + 'updateImage', image).subscribe()
-    alert("Image has been uploaded")
+    this._http.post(this.baseUrl + 'updateImage', image).subscribe(
+      data => {
+        this.getFile(this._session.username)
+        alert("Image has been uploaded")
+      }
+    )
+    
   }
 
-  async getFile() {
-    let getImageRespone = await fetch(this.baseUrl + 'getProfilePic/' + this._session.username, {
+  async getFile(username: string) {
+    let getImageRespone = await fetch(this.baseUrl + 'getProfilePic/' + username, {
       method: 'GET'
     })
     let imageName = await getImageRespone.text()
@@ -82,9 +95,19 @@ export class UserFieldComponent implements OnInit {
     )
   }
 
+  getPosts()
+  {
+    this._http.get(this.baseUrl + 'getAllPosts').subscribe(
+      (data: Array<Post>) => {
+        this.tDatas = data
+      }
+    )
+  }
+
   constructor(private _http: HttpClient, private _session: SessionService, private _toggle: AppComponent) {
-    this.getFile()
+    this.getFile(this._session.username)
     this.getUserInformation(this._session.username)
+    this.getPosts()
   }
 
   togglePage() {

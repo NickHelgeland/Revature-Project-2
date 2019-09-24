@@ -40,7 +40,7 @@ public class PostDAO implements Insert<Post>, Update<Post>,  Delete<Post>, Selec
 	 */
 	public List<Post> selectAll() {
 		Session session = sf.openSession();
-		List<Post> posts = session.createQuery("FROM post",Post.class).list();
+		List<Post> posts = session.createQuery("FROM Post",Post.class).list();
 		session.close();
 		return posts;
 	}

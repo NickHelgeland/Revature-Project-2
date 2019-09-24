@@ -11,6 +11,7 @@ import { UpdateFormComponent } from './components/update-form/update-form.compon
 import { SearchFriendComponent } from './search-friend/search-friend.component';
 import { InvitationComponent } from './invitation/invitation.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { FriendProfileComponent } from './friend-profile/friend-profile.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'update-form', component: UpdateFormComponent},
   { path: 'search-friend', component: SearchFriendComponent },
   { path: 'invitation', component: InvitationComponent },
-  { path: 'changepassword', component: ChangepasswordComponent }
+  { path: 'changepassword', component: ChangepasswordComponent },
+  { path: 'app-friend-profile', component: FriendProfileComponent}
 ];
 
 @NgModule({
