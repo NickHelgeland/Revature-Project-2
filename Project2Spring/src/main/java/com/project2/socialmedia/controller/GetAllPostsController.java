@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project2.socialmedia.dao.Select;
 import com.project2.socialmedia.model.Post;
-
+/**
+ * This class is a restful to save data in post table.
+ * @author Nick, Ilia, Danny and Fausto.
+ *
+ */
 @RestController
 public class GetAllPostsController 
 {
