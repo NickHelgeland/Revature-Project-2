@@ -10,7 +10,9 @@ export class User
 
     email: string
 
-    postList: Array<Post>;
+    postList: Array<Post>
+
+    userName: string
 
     constructor(firstname: string, lastname: string, address: string, email:string)
     {
